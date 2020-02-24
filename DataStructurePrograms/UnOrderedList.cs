@@ -17,6 +17,7 @@ namespace DataStructurePrograms
             }
         }
         static Node head;
+        //Add element in the list
         public void Add(T data)
         {
             Node n = new Node(data);
@@ -33,6 +34,7 @@ namespace DataStructurePrograms
             t.Next = n;
             n.Prev = t;
         }
+        //Element add in first 
         public void AddFirst(T data)
         {
             Node n = new Node(data);
@@ -42,6 +44,7 @@ namespace DataStructurePrograms
             head = n;
 
         }
+        //Remove the element based on given data
         public void Remove(T data)
         {
             Node t = head, p = t;
@@ -72,6 +75,7 @@ namespace DataStructurePrograms
                 t = t.Next;
             }
         }
+        //Searching element and return boolean values
         public bool Search(T data)
         {
             Node t = head;
@@ -85,6 +89,7 @@ namespace DataStructurePrograms
             }
             return false;
         }
+        //override Tostring method
         public override string ToString()
         {
             Node t = head;
@@ -100,6 +105,7 @@ namespace DataStructurePrograms
             }
             return st += "]";
         }
+        //Size of list
         public int Size()
         {
             Node t = head;
@@ -111,6 +117,7 @@ namespace DataStructurePrograms
             }
             return count;
         }
+        //Element index
         public int Index(T data)
         {
             int count=-1;
@@ -126,6 +133,7 @@ namespace DataStructurePrograms
             }
             return -1;
         }
+        // element add at the end
         public void Append(T data)
         {
             Node t = head;
@@ -137,6 +145,7 @@ namespace DataStructurePrograms
             t.Next = n;
             n.Prev = t;
         }
+        //Element add based on position
         public void Insert(int Position,T data)
         {
             if (Position == 0)
@@ -159,6 +168,7 @@ namespace DataStructurePrograms
             }
 
         }
+        //Remove the Element
         public T Pop()
         {
             Node t = head, p = t;
@@ -171,6 +181,7 @@ namespace DataStructurePrograms
             p.Next = null;
             return data;
         }
+        // remove the element based on position
         public T Pop(int Position)
         {
             if (Position == 0)
@@ -196,10 +207,12 @@ namespace DataStructurePrograms
             }
             return (T)default;
         }
+        //Check List is Empty
         public bool IsEmpty()
         {
           return  head == null;
         }
+        //Peek the Element
         public T Peek(int Position)
         {
             Node t = head;
