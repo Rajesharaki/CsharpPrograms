@@ -15,6 +15,7 @@ namespace CsharpPrograms.AlgorithmPrograms
             int Low = u.ReadInt();
             Console.Write("Enter the Second range value: ");
             int High = u.ReadInt();
+         //If Low is greater than high then swapp
             if (Low > High)
             {
               
@@ -25,14 +26,14 @@ namespace CsharpPrograms.AlgorithmPrograms
 
             for (int i = Low; i <= High; i++)
             {
-                if (IsPrime(i))
+                if (IsPrime(i))  //check Paindrome
                 {
-                    if (i >= 100)
+                    if (i >= 100) // Enter If Prime number is more than 100
                     {
-                        if (Palindrome(i))
+                        if (Palindrome(i)) //check Prime number is palindrome or not  if false then enter
                         {
-                            int num = MakePali(i);
-                            if (IsPrime(num))
+                            int num = MakePali(i); //Make palindrome
+                            if (IsPrime(num)) // check palindrome is prime or not
                             {
                                 Console.WriteLine("'" + i + "' and " + "'" + num + "'  both are prime Number along with Palindrome and anagram number.....");
                             }
@@ -41,6 +42,7 @@ namespace CsharpPrograms.AlgorithmPrograms
                 }
             }
         }
+        // Check Prime
         static bool IsPrime(int num)
         {
             bool flag = true;
@@ -53,6 +55,7 @@ namespace CsharpPrograms.AlgorithmPrograms
             }
             return flag;
         }
+        // Make string
         static int MakePali(int num)
         {
             int temp = num, j = 0;
@@ -90,6 +93,7 @@ namespace CsharpPrograms.AlgorithmPrograms
             }
             return 4; 
         }
+        //Count digit
         static int Count(int num)
         {
             int count = 0;
@@ -100,6 +104,7 @@ namespace CsharpPrograms.AlgorithmPrograms
             }
             return count;
         }
+        //check palindrome
         static bool Palindrome(int num)
         {
             int temp = num;
