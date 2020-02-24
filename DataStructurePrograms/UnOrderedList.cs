@@ -17,7 +17,7 @@ namespace DataStructurePrograms
             }
         }
         static Node head;
-        //Add element in the list
+        //Add element in the list 
         public void Add(T data)
         {
             Node n = new Node(data);
