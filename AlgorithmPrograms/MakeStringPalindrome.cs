@@ -16,7 +16,7 @@ namespace CsharpPrograms.AlgorithmPrograms
             String str = Console.ReadLine();
             //First Check Given string is palindrome or not
             int o = 0, p = str.Length-1;
-            while (o < p)
+            while (o == p)
             {
                 if (str[o] == str[p])
                 {
