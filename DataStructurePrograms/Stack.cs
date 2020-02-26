@@ -7,7 +7,7 @@ namespace DataStructurePrograms
     class Stack<T>
     {
         T[] a;
-        static int top;
+        static int top=-1;
         public Stack(int Size)
         {
             a = new T[Size];
@@ -15,14 +15,14 @@ namespace DataStructurePrograms
         //push The Element into  a Stack
         public void Push(T data)
         {
-            a[top++] = data;
+            a[++top] = data;
         }
-        
+
         //Pop the element
         public T Pop()
         {
-            T data = a[top-1];
-            a[top-1] = (T)default;
+            T data = a[top];
+            a[top] = (T)default;
             top--;
             return data;
         }
@@ -37,13 +37,18 @@ namespace DataStructurePrograms
         //Check stack is empty or not
         public bool IsEmpty()
         {
-            return a[0].Equals( (T)default);
+            if (top == -1)
+            {
+                return true;
+            }
+
+            else return false;
         }
 
         //Size of Stack
         public int Size()
         {
-            return top;
+            return a.Length;
         }
 
         //Show all data inside the stack
