@@ -24,7 +24,7 @@ namespace DataStructurePrograms
             else
             {
                 size++;
-                Array[++Rear] = Item;  //Item adds at the Rear
+                Array[++Rear] = Item;  //Item adds at the Rear 
                 if (Front == -1)
                 {
                     Front++;
