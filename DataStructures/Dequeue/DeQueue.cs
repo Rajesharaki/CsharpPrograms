@@ -33,7 +33,7 @@ namespace DataStructurePrograms
             }
         }
 
-        //Removes the Front item from the Dequeue
+        //Removes the Front item from the Dequeue 
         public T RemoveFront()
         {
             if (Front == -1) //If there is No Item inside the queue
