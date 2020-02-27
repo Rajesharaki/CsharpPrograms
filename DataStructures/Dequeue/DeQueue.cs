@@ -95,7 +95,7 @@ namespace DataStructurePrograms
             }
         }
         //Check queue is empty
-        public bool IsEmpty()
+        public bool IsEmpty() 
         {
             if (Rear == -1 && Front == -1)
             {
