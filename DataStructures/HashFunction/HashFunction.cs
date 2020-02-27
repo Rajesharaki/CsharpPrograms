@@ -69,13 +69,5 @@ namespace DataStructurePrograms
             int Index = num % 11;
             return a[Index].Search(num);
         }
-        public void Display(OrderedList [] a)
-        {
-            int k = 0;
-            for(int i = 0; i < a.Length; i++)
-            {
-                Console.WriteLine((k++)+" -----> "+a[i]);
-            }
-        }
     }
 }
