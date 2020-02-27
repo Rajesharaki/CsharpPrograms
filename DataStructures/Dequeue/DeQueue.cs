@@ -6,7 +6,7 @@ namespace DataStructurePrograms
 {
     class DeQueue<T>
     {
-        int Rear = -1, Front = -1;
+        int Rear = -1, Front = -1, size = 0;
         T[] Array;
 
         //Creates a new Dequeue that is empty
@@ -25,6 +25,7 @@ namespace DataStructurePrograms
             }
             else
             {
+                size++;
                 Array[++Rear] = Item;  //Item adds at the Rear
                 if (Front == -1)
                 {
@@ -47,11 +48,12 @@ namespace DataStructurePrograms
                 T Item = Array[Front];
                 Front = -1;
                 Rear = -1;
+                size--;
                 return Item;
             }
             else
             {
-                T Item = Array[Front++];
+                T Item = Array[Front++];size--;
                 return Item;
             }
         }
@@ -62,7 +64,7 @@ namespace DataStructurePrograms
             if (Front == -1)
             {
                 Array[++Front] = Item;
-                Rear++;
+                Rear++;size++; 
                 return;
             }
             else if (Front == 0)
@@ -72,7 +74,7 @@ namespace DataStructurePrograms
             }
             else
             {
-                Array[--Front] = Item;
+                Array[--Front] = Item;size++;
             }
         }
 
@@ -88,16 +90,31 @@ namespace DataStructurePrograms
             {
                 T Data = Array[Rear];
                 Front = -1;
-                Rear = -1;
+                Rear = -1;size--;
                 return Data;
             }
             else
             {
-                T Data = Array[Rear--];
+                T Data = Array[Rear--];size--;
                 return Data;
             }
         }
 
+        //Check queue is empty
+        public bool IsEmpty()
+        {
+            if (Rear == -1 && Front == -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //Size of an Queue
+        public int Size()
+        {
+            return size;
+        }
         //Override the ToString Method
         public override String ToString()
         {
