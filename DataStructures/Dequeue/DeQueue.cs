@@ -16,7 +16,7 @@ namespace DataStructurePrograms
         //Adds a new Item to thr Rear of the Dequeue
         public void AddRear(T Item)
         {
-            if (Rear == Array.Length - 1)  //If Rear is More than Queue Size  
+            if (Rear == Array.Length - 1)  //If Rear is More than Queue Size   
             {
                 Console.WriteLine("Queue is OverFlow.....");
                 return;
