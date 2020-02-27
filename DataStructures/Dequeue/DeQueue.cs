@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+ 
 namespace DataStructurePrograms
 {
     class DeQueue<T>
@@ -16,14 +16,14 @@ namespace DataStructurePrograms
         //Adds a new Item to thr Rear of the Dequeue
         public void AddRear(T Item)
         {
-            if (Rear == Array.Length - 1)  //If Rear is More than Queue Size  
+            if (Rear == Array.Length - 1)  //If Rear is More than Queue Size   
             {
-                Console.WriteLine("Queue is OverFlow.....");
-                return;
-            }
+                Console.WriteLine("Queue is OverFlow....."); 
+                return; 
+            } 
             else
             {
-                size++;
+                size++; 
                 Array[++Rear] = Item;  //Item adds at the Rear 
                 if (Front == -1)
                 {
@@ -95,7 +95,7 @@ namespace DataStructurePrograms
             }
         }
         //Check queue is empty
-        public bool IsEmpty()
+        public bool IsEmpty() 
         {
             if (Rear == -1 && Front == -1)
             {
@@ -120,7 +120,7 @@ namespace DataStructurePrograms
                     if (i <= Rear - 1)
                     {
                         st += ",";
-                    }
+                    } 
                 }
             }
             st += "}";

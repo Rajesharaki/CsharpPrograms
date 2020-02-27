@@ -23,7 +23,7 @@ namespace DataStructurePrograms
             }
             //Check Palindrome
             while (!(list.IsEmpty()))
-            {
+            { 
                 if (list.Size() == 1)
                 {
                     break;
