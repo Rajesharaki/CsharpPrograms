@@ -8,13 +8,11 @@ namespace DataStructurePrograms
     {
         int Rear = -1, Front = -1, size = 0;
         T[] Array;
-
         //Creates a new Dequeue that is empty
         public DeQueue(int Capacity)
         {
             Array = new T[Capacity];
         }
-
         //Adds a new Item to thr Rear of the Dequeue
         public void AddRear(T Item)
         {
@@ -33,7 +31,6 @@ namespace DataStructurePrograms
                 }
             }
         }
-
         //Removes the Front item from the Dequeue
         public T RemoveFront()
         {
@@ -57,7 +54,6 @@ namespace DataStructurePrograms
                 return Item;
             }
         }
-
         //Adds new  items to the Front of the Dequeue
         public void AddFront(T Item)
         {
@@ -77,7 +73,6 @@ namespace DataStructurePrograms
                 Array[--Front] = Item;size++;
             }
         }
-
         //Remove the Rear item from the Dequeue
         public T RemoveRear()
         {
@@ -99,7 +94,6 @@ namespace DataStructurePrograms
                 return Data;
             }
         }
-
         //Check queue is empty
         public bool IsEmpty()
         {
@@ -109,7 +103,6 @@ namespace DataStructurePrograms
             }
             return false;
         }
-
         //Size of an Queue
         public int Size()
         {
