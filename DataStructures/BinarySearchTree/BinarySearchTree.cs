@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructurePrograms
 {
-    class BinarySerchTree
+    class BinarySearchTree
     {
         //Creating Node class
         class Node
@@ -21,21 +21,22 @@ namespace DataStructurePrograms
         //Adds a Items into the binary tree
         public void Add(int Data)
         {
-            Node n=new Node(Data);
+            Node n = new Node(Data);
             if (Root == null)      //If root is empty then root pointing to the newly created object
             {
                 Root = n;
+                return;
             }
             Node Current = Root;
             Node Parent = Current;
-            while(Current != null)   //Finding the position to Add a items into the Balanced tree
+            while (Current != null)   //Finding the position to Add a items into the Balanced tree
             {
-                Parent=Current;
+                Parent = Current;
                 if (n.Data < Current.Data)
                 {
                     Current = Current.Left;
                 }
-                else
+                else if(n.Data> Current.Data)
                 {
                     Current = Current.Right;
                 }
@@ -48,6 +49,30 @@ namespace DataStructurePrograms
             {
                 Parent.Right = n;
             }
+        }
+        public bool Search(int Data)
+        {
+            static bool Searching(Node Root, int Data)
+            {
+                if (Root == null)
+                {
+                    return false;
+                }
+                if (Root.Data == Data)
+                {
+                    return true;
+                }
+                else if(Data<Root.Data)
+                {
+                    return Searching(Root.Left, Data);
+                }
+                else
+                {
+                    return Searching(Root.Right, Data);
+                }
+
+            }
+            return Searching(Root, Data);
         }
     }
 }
