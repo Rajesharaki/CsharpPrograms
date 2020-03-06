@@ -1,10 +1,11 @@
 ﻿using System;
-using DataStructurePrograms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Collections.Generic;
+
 namespace ObjectOrientedPrograms
 {
-    struct Details
+    public class Details
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -22,12 +23,14 @@ namespace ObjectOrientedPrograms
     }
     class AddressBook
     {
-        UnOrderedList<String> list = new UnOrderedList<string>();    //using List name space class
-        string FilePath = @"C:\Users\yempc72\Desktop\AddressBook.json";
+        List<Details> list = new List<Details>();    //using List name space class
+        //Address book Constructor
         public AddressBook()
         {
             Selection();
         }
+
+        //Selection method
         public void Selection()
         {
             Console.WriteLine("'A'-->press A to add A new Person\n" +
@@ -41,8 +44,8 @@ namespace ObjectOrientedPrograms
                 case "A": Console.Clear(); AddDetail(); break;
                 case "Q": Console.Clear(); Quit(); break;
                 case "S": Console.Clear(); Display(); break;
-                case "D": Console.Clear();Delete();break;
-                case "E": Console.Clear();Edit();break;
+                case "D": Console.Clear(); Delete(); break;
+                case "E": Console.Clear(); Edit(); break;
                 default: Console.WriteLine("Invalid Key....Enter correct Key ..."); Selection(); break;
             }
         }
@@ -73,52 +76,24 @@ namespace ObjectOrientedPrograms
                 Zip = Zip,
                 PhoneNo = PhNo
             };
-            string ob = JsonConvert.SerializeObject(obj); //Convert Details object into Class information or string
-            Check(ob);
+            Check(obj);
         }
         //Checking any details repeated 
-        public void Check(string value)
+        public void Check(Details Obj)
         {
-            string[] text = File.ReadAllLines(FilePath);  //Reading all text from the file
-            for (int i = 0; i < text.Length; i++)
+            String Read = File.ReadAllText(@"C:\Users\yempc72\Desktop\AddressBook.json");
+            if (Read.Length != 0)
             {
-                list.Add(text[i]+"\n");
+                list = JsonConvert.DeserializeObject<List<Details>>(Read);
             }
-            if (list.Search(value))
-            {
-                Console.WriteLine("This Details already exists");
-                Selection();
-            }
-            else
-            {
-                Console.WriteLine("Successfully stored your details...................");
-                list.Add(value+"\n");
-            }
-            Select();
-        }
-        public void Select()
-        {
-            Console.WriteLine("'A'-->press A to add A new Person\n" +
-                              "'Q'-->Press Q to Quit\n" +
-                               "'D'-->Press D to Delete\n"+ "'E'-->Press E to Edit Address");
-            String select = Console.ReadLine();
-            switch (select)
-            {
-                case "A": Console.Clear(); AddDetail(); break;
-                case "Q": Console.Clear(); Quit(); break;
-                case "D": Console.Clear(); Delete(); break;
-                case "E": Console.Clear(); Edit(); break;
-                default: Console.WriteLine("Invalid Key....Enter correct Key ..."); Selection(); break;
-            }
+            list.Add(Obj);
+            File.WriteAllText(@"C:\Users\yempc72\Desktop\AddressBook.json", JsonConvert.SerializeObject(list));
+            Selection();
         }
         //Quit method
         public void Quit()
         {
             Console.WriteLine("Successfully Stored All Details................");
-            if (!(list.IsEmpty())) //Storing all details 
-            {
-                File.WriteAllText(FilePath, list.ToString());
-            }
             Environment.Exit(0);
         }
         //Displaying Address book details
@@ -127,76 +102,102 @@ namespace ObjectOrientedPrograms
             Console.Clear();
             Console.WriteLine("............................................Adress Details................................................");
             Console.WriteLine("___________________________________________________________________________________________________________");
-            String[] a = File.ReadAllLines(FilePath);
-            int k = 1;
-            for (int i = 0; i < a.Length ; i++)
+            string Read = File.ReadAllText(@"C:\Users\yempc72\Desktop\AddressBook.json");
+            list = JsonConvert.DeserializeObject<List<Details>>(Read);
+            foreach (var x in list)
             {
-                Console.WriteLine("Address Number " + (k++));
-                Console.WriteLine("_________________________");
-                Details r = JsonConvert.DeserializeObject<Details>(a[i]);
-                Console.WriteLine(r);
-                Console.WriteLine();
+                Console.WriteLine(x + "\n");
             }
-            Select();
+            Selection();
         }
         public void Delete()
         {
-            Console.Write("Enter the FirstName : ");
-            String name = Console.ReadLine();
-            string [] Name=File.ReadAllLines(FilePath);
-            for (int k = 0; k < Name.Length; k++)
+            Console.Write("Enter the Delete FirstName: ");
+            string name = Console.ReadLine();
+            string Read = File.ReadAllText(@"C:\Users\yempc72\Desktop\AddressBook.json");
+            list = JsonConvert.DeserializeObject<List<Details>>(Read);
+            Details[] a = list.ToArray();
+            List<Details> d = new List<Details>();
+            foreach (Details x in a)
             {
-                list.Add(Name[k] + "\n");
-            }
-            for (int i = 0; i < Name.Length; i++)
-            {
-                Details r = JsonConvert.DeserializeObject<Details>(Name[i]);
-                if (r.FirstName == name)
+                if (!x.FirstName.Equals(name))
                 {
-                 
-                    list.Remove(r.FirstName);
-                    File.WriteAllText(FilePath, list.ToString());
+                    d.Add(x);
                 }
             }
+            ////serializing the List of Person objects
+            string serialize = JsonConvert.SerializeObject(d);
+            ////Re-writing the json file with deletion
+            File.WriteAllText(@"C:\Users\yempc72\Desktop\AddressBook.json", serialize);
             Display();
         }
         public void Edit()
         {
-            Console.WriteLine("1 --> for Edit FirstName\n" +
-                "2-->for Edit Last Name\n" +
-                "3-->for Edit Address\n" +
-                "4-->for Edit City\n" +
-                "5-->for Edit State\n" +
-                "6-->for Edit Zip\n" +
-                "7-->for Edit Phone number");
-            int num = int.Parse(Console.ReadLine());
-            string[] text = File.ReadAllLines(FilePath);  //Reading all text from the file
-            for (int k = 0; k < text.Length; k++)
+            string Read = File.ReadAllText(@"C:\Users\yempc72\Desktop\AddressBook.json");
+            list = (List<Details>)JsonConvert.DeserializeObject<List<Details>>(Read);
+            Console.Write("Enter the FirstName: ");
+            String name = Console.ReadLine();
+            Console.WriteLine("F-->Edit FirstName\nL-->Edit Last Name\nA-->Edit Address\nC-->Edit City\nS-->Edit State\nZ-->Edit Zip\nP-->Edit Phone Number");
+            string edit = Console.ReadLine();
+            edit.ToUpper();
+            foreach (var obj in list)
             {
-                list.Add(text[k] + "\n");
-            }
-            Console.WriteLine(list.ToString());
-            if (num == 1)
-            {
-                Console.Write("Enter the First Name: ");
-                string FN = Console.ReadLine();
-                for(int i = 0; i < text.Length; i++)
+                if (obj.FirstName.Equals(name))
                 {
-                    Details r = JsonConvert.DeserializeObject<Details>(text[i]);
-                    if (r.FirstName == FN)
+                    switch (edit)
                     {
-                        Console.WriteLine(r.FirstName);
-                        Console.WriteLine("Edit FirstName");
-                        string name = Console.ReadLine();
-                        string find = JsonConvert.SerializeObject(r);
-                        string replace= find.Replace(FN, name);
-                        list.Add(replace);
-                        File.WriteAllText(FilePath, list.ToString());
+                        case "F":
+                            Console.Write("Edit First Name: ");
+                            string Replace = Console.ReadLine();
+                            Console.WriteLine($"{obj.FirstName} Renamed {Replace}");
+                            obj.FirstName = Replace;
+                            break;
+                        case "L":
+                            Console.Write("Edit Last Name: ");
+                            string LastName = Console.ReadLine();
+                            Console.WriteLine($"{obj.LastName} Renamed {LastName}");
+                            obj.LastName = LastName;
+                            break;
+                        case "A":
+                            Console.Write("Edit Address: ");
+                            string Address = Console.ReadLine();
+                            Console.WriteLine($"{obj.Address} Renamed {Address}");
+                            obj.Address = Address;
+                            break;
+                        case "C":
+                            Console.Write("Edit City: ");
+                            string City = Console.ReadLine();
+                            Console.WriteLine($"{obj.City} Renamed {City}");
+                            obj.City = City;
+                            break;
+                        case "S":
+                            Console.Write("Edit State: ");
+                            string State = Console.ReadLine();
+                            Console.WriteLine($"{obj.State} Renamed {State}");
+                            obj.State = State;
+                            break;
+                        case "Z":
+                            Console.Write("Edit Zip: ");
+                            string Zip = Console.ReadLine();
+                            Console.WriteLine($"{obj.Zip} Changed {Zip}");
+                            obj.Zip = Zip;
+                            break;
+                        case "P":
+                            Console.Write("Edit Phone: ");
+                            string Phone = Console.ReadLine();
+                            Console.WriteLine($"{obj.PhoneNo} Changed {Phone}");
+                            obj.PhoneNo = Phone;
+                            break;
+                        default:
+                            Console.WriteLine("Pressed Wrong key Enter Again ..................");
+                            Edit();
+                            break;
                     }
                 }
             }
-
-           Display();
+            string Serialize = JsonConvert.SerializeObject(list);
+            File.WriteAllText(@"C:\Users\yempc72\Desktop\AddressBook.json", Serialize);
+            Selection();
         }
     }
 }
