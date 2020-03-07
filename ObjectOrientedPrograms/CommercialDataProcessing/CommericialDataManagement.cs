@@ -16,12 +16,13 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
         }
         public void Selection()
         {
-            Console.WriteLine("1-->Add Stocks\n2-->Display Stocks");
+            Console.WriteLine("1-->Add Stocks\n2-->Display Stocks\n3-->Remove Stocks");
             int Select = int.Parse(Console.ReadLine());
             switch (Select)
             {
                 case 1: AddStock(); break;
                 case 2: Display(); break;
+                case 3: Remove();break;
                 default: Environment.Exit(0); break;
             }
         }
@@ -44,6 +45,23 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
             string ClassInformation = JsonConvert.SerializeObject(account);
             File.WriteAllText(FilePath, ClassInformation);
             Selection();
+        }
+        public void Remove()
+        {
+            string Read=File.ReadAllText(FilePath);
+            Console.Write("Enter the Name ");
+            String name = Console.ReadLine();
+            account = new List<StockAccount>();
+            StockAccount []Copy=account.ToArray();
+            for(int i = 0; i < Copy.Length; i++)
+            {
+                if (Copy[i].Name != name)
+                {
+                    account.Add(Copy[i]);
+                }
+            }
+            string serialize=JsonConvert.SerializeObject(account);
+            File.WriteAllText(FilePath, serialize);
         }
         public void Display()
         {
