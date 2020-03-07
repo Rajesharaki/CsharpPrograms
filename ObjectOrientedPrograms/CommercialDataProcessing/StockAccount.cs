@@ -48,7 +48,8 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
         }
         public void PrintReport()
         {
-            Console.WriteLine($"Name:{this.Name}\nCash:{this.Cash}\nNumberOfShare:{this.NumberOfShares}");
+            string st = "";
+            Console.WriteLine($"Name:{this.Name}\nCash:{this.Cash}\nNumberOfShare:{this.NumberOfShares}"+st.PadRight(12)+ $"Date: { Timing}");
             Console.WriteLine("_______________________________________________");
             for (int i = 0; i < this.NumberOfShares; i++)
             {
