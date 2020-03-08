@@ -1,0 +1,13 @@
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.exe
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.deps.json
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.runtimeconfig.json
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.runtimeconfig.dev.json
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.dll
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.pdb
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\obj\Debug\netcoreapp3.1\DataStructurePrograms.csprojAssemblyReference.cache
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\obj\Debug\netcoreapp3.1\DataStructurePrograms.AssemblyInfoInputs.cache
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\obj\Debug\netcoreapp3.1\DataStructurePrograms.AssemblyInfo.cs
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\obj\Debug\netcoreapp3.1\DataStructurePrograms.dll
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\obj\Debug\netcoreapp3.1\DataStructurePrograms.pdb
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\rajes\OneDrive\Desktop\Csharp Programs\FellowShipPrograms\DataStructurePrograms\obj\Debug\netcoreapp3.1\DataStructurePrograms.csproj.CopyComplete
