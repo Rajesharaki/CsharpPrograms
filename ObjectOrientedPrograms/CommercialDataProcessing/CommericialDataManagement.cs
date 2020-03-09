@@ -22,7 +22,7 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
             {
                 case 1: AddStock(); break;
                 case 2: Display(); break;
-                case 3: Remove();break;
+                case 3: Remove(); break;
                 default: Environment.Exit(0); break;
             }
         }
@@ -30,7 +30,7 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
         {
             Console.WriteLine("Enter the Name: ");
             String Name = Console.ReadLine();
-            StockAccount ac= new StockAccount();
+            StockAccount ac = new StockAccount();
             ac.Fill(Name);
             if (account == null)
             {
@@ -48,26 +48,32 @@ namespace ObjectOrientedPrograms.CommercialDataProcessing
         }
         public void Remove()
         {
-            string Read=File.ReadAllText(FilePath);
+            string Read = File.ReadAllText(FilePath);
+            if (account == null)
+            {
+                account=JsonConvert.DeserializeObject<List<StockAccount>>(Read);
+            }
             Console.Write("Enter the Name ");
             String name = Console.ReadLine();
-            account = new List<StockAccount>();
-            StockAccount []Copy=account.ToArray();
-            for(int i = 0; i < Copy.Length; i++)
+            StockAccount[] Copy = account.ToArray();
+            List<StockAccount> NewList = new List<StockAccount>();
+            for (int i = 0; i < Copy.Length; i++)
             {
                 if (Copy[i].Name != name)
                 {
-                    account.Add(Copy[i]);
+                    NewList.Add(Copy[i]);
                 }
             }
-            string serialize=JsonConvert.SerializeObject(account);
+            string serialize = JsonConvert.SerializeObject(NewList);
             File.WriteAllText(FilePath, serialize);
+            Selection();
         }
         public void Display()
         {
             string Read = File.ReadAllText(FilePath);
-            account = JsonConvert.DeserializeObject<List<StockAccount>>(Read);
-            foreach(var Print in account)
+            List<StockAccount> list = new List<StockAccount>();
+            list = JsonConvert.DeserializeObject<List<StockAccount>>(Read);
+            foreach (var Print in list)
             {
                 Print.PrintReport();
             }
