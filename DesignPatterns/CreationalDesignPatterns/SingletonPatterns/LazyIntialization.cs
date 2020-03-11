@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace DesignPatterns.CreationalDesignPatterns.SingletonPatterns
 {
-    class LazyIntialization
+    public sealed class LazyIntialization
     {
         private static LazyIntialization Instance;
         private LazyIntialization() { }
-        public LazyIntialization GetInsatnce()
+        public static LazyIntialization GetInstance()
         {
-            Instance = null;
             if (Instance == null)
             {
                 Instance = new LazyIntialization();
             }
             return Instance;
         }
+
     }
 }
