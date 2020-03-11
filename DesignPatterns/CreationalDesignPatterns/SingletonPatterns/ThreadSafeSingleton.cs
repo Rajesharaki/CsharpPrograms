@@ -6,7 +6,7 @@ namespace DesignPatterns.CreationalDesignPatterns.SingletonPatterns
 {
     public sealed class ThreadSafeSingleton
     {
-        private static  Object Locker = new Object();
+        private static readonly  Object Locker = new Object();
         private static ThreadSafeSingleton Instance;
         private ThreadSafeSingleton() { }
         public static ThreadSafeSingleton GetInstance()
