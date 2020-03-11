@@ -13,11 +13,6 @@ namespace DesignPatterns.CreationalDesignPatterns.SingletonPatterns
           
             get
             {
-                int a,b;
-                Console.Write("Enter the value: ");
-                int.TryParse(Console.ReadLine(), out a);
-                Console.Write("Enter the value: ");
-                int.TryParse(Console.ReadLine(), out b);
                 try
                 {
                     return Instance;
