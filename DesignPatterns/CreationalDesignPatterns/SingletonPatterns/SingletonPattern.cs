@@ -7,7 +7,7 @@ namespace DesignPatterns.CreationalDesignPatterns.SingletonPatterns
     /// <summary>
     /// If we want only one object of any class we go for Singleton Pattern
     /// </summary>
-    class SingletonPattern
+    sealed  class SingletonPattern
     {
         //Make object reference static why because static method can handle only static members
         private static SingletonPattern Instance;
