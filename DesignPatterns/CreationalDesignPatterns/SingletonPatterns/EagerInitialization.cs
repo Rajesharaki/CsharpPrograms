@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.CreationalDesignPatterns.SingletonPatterns
 {
-    public class EagerInitialization
+    public sealed class EagerInitialization
     {
         private static EagerInitialization instance = new EagerInitialization();
         private EagerInitialization()
