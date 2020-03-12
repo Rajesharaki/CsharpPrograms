@@ -4,11 +4,14 @@ using System.Text;
 
 namespace DesignPatterns.CreationalDesignPatterns.SingletonPatterns
 {
-    sealed class Reflection : Demo
+    sealed class Reflection
     {
         private Reflection()
         {
-
+            if (ReflectionHelperClass.Instance != null)
+            {
+                throw new Exception("Excecption occured in creating Singleton object");
+            }
         }
         public static Reflection GetInstance
         {
