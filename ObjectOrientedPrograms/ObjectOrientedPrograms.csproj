@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Card\**" />
+    <EmbeddedResource Remove="Card\**" />
+    <None Remove="Card\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DataStructurePrograms">
+      <HintPath>..\DataStructurePrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

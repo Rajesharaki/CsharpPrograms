@@ -1,0 +1,15 @@
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\ObjectOrientedPrograms.exe
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\obj\Debug\netcoreapp3.1\ObjectOrientedPrograms.AssemblyInfoInputs.cache
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\obj\Debug\netcoreapp3.1\ObjectOrientedPrograms.AssemblyInfo.cs
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\ObjectOrientedPrograms.deps.json
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\ObjectOrientedPrograms.runtimeconfig.json
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\ObjectOrientedPrograms.runtimeconfig.dev.json
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\ObjectOrientedPrograms.dll
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\ObjectOrientedPrograms.pdb
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.dll
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\bin\Debug\netcoreapp3.1\DataStructurePrograms.pdb
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\obj\Debug\netcoreapp3.1\ObjectOrientedPrograms.csprojAssemblyReference.cache
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\obj\Debug\netcoreapp3.1\ObjectOrientedPrograms.csproj.CopyComplete
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\obj\Debug\netcoreapp3.1\ObjectOrientedPrograms.dll
+C:\Users\yempc72\Desktop\VisualStudioPrograms\Project\ObjectOrientedPrograms\obj\Debug\netcoreapp3.1\ObjectOrientedPrograms.pdb
