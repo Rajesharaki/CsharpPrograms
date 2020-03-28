@@ -1,0 +1,25 @@
+﻿@model User
+<div class="page-header col-md-5 col-md-offset-3">
+    <h1 class="text-center bg-info">User Details here...!</h1>
+</div>
+<div class="col-lg-6 col-lg-offset-2">
+    <form asp-action="Update" class="form-control">
+        <table class="table-striped">
+            <tr>
+                <td><label asp-for="ID"></label></td>
+                <td><input asp-for="ID" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="Name"></label></td>
+                <td><input asp-for="Name" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="Email"></label></td>
+                <td><input asp-for="Email" /></td>
+            </tr>
+
+        </table>
+            <a class="btn btn-info" asp-action="Index">Home</a>
+                <a class="btn btn-primary" asp-action="List">Back</a>
+    </form>
+</div>
