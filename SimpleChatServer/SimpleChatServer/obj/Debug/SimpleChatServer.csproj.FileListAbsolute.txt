@@ -1,0 +1,9 @@
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\bin\Debug\SimpleChatServer.exe.config
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\bin\Debug\SimpleChatServer.exe
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\bin\Debug\SimpleChatServer.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\obj\Debug\SimpleChatServer.csprojAssemblyReference.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\obj\Debug\SimpleChatServer.Form1.resources
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\obj\Debug\SimpleChatServer.Properties.Resources.resources
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\obj\Debug\SimpleChatServer.csproj.GenerateResource.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\obj\Debug\SimpleChatServer.exe
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\SimpleChatServer\SimpleChatServer\obj\Debug\SimpleChatServer.pdb
