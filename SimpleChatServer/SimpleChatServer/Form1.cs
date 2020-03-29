@@ -41,6 +41,7 @@ namespace SimpleChatServer
             epremote = new IPEndPoint(IPAddress.Parse(textRemoteIP.Text), Convert.ToInt32(textRemotePort.Text));
             socket.Connect(epremote);
             //Listing thr specific port
+            buffer = new byte[1500];
             socket.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref epremote, new AsyncCallback(MessageCallBack), buffer);
         }
         private void MessageCallBack(IAsyncResult result)
