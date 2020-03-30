@@ -64,7 +64,7 @@ namespace SimpleChatServer
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //Converting string message into byte
             ASCIIEncoding aencoding = new ASCIIEncoding();
