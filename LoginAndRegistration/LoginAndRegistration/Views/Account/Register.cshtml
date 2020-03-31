@@ -1,26 +1,36 @@
 ﻿@model RegisterModelView
-<div class="container">
-    <div class="row">
-        <form method="post">
-            <h1 class=" table-success">New User Registartion</h1>
-            <div class="col-7  offset-2 m-4">
-                <div class="form-group">
-                    <label asp-for="Email"></label>
-                    <input asp-for="Email" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="col-7  offset-2 m-4">
+    <div class="container">
+        <div class="row">
+            <form method="post">
+                <h1 class=" table-success">New User Registartion</h1>
+                <div>
+                    <div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="col-md-10" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="col-md-10" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword"></label>
+                            <input asp-for="ConfirmPassword" class="col-md-10" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-success">Register</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Password"></label>
-                    <input asp-for="Password" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ConfirmPassword"></label>
-                    <input asp-for="ConfirmPassword" />
-                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-                </div>
-                <button type="submit" class="btn btn-success">Register</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
+
+
