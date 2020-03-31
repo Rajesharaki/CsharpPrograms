@@ -1,6 +1,0 @@
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\LoginAndRegistration\obj\Debug\netcoreapp2.1\LoginAndRegistration.csprojAssemblyReference.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\LoginAndRegistration\obj\Debug\netcoreapp2.1\LoginAndRegistration.csproj.CoreCompileInputs.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\LoginAndRegistration\obj\Debug\netcoreapp2.1\LoginAndRegistration.RazorAssemblyInfo.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\LoginAndRegistration\obj\Debug\netcoreapp2.1\LoginAndRegistration.RazorAssemblyInfo.cs
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\LoginAndRegistration\obj\Debug\netcoreapp2.1\LoginAndRegistration.AssemblyInfoInputs.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\LoginAndRegistration\obj\Debug\netcoreapp2.1\LoginAndRegistration.AssemblyInfo.cs
