@@ -1,0 +1,34 @@
+﻿@page
+@using ChatApplication.Models
+@inject DataDbContext context
+<h1 class="text-center text-white-50 text-success">Welcome</h1>
+<div class="container bg-transparent">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-3">&nbsp;</div>
+        <div class="col-6">
+            Enter the UserName<input type="text" id="userInput" class="form-control" placeholder="Name Here....."/>
+            Enter the Message<input type="text" id="messageInput" class="form-control" placeholder="Message Here......" /><br />
+            <input type="submit" id="sendButton" value="Send" class="btn btn-info btn-block"  />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">&nbsp;</div>
+        <div class="col-4">
+            <div class="border-dark">
+            @*<ul id="messagesList" class="list-group-item-dark"></ul>*@
+                @foreach (User user in context.users)
+                {
+                    <li>@user.UserName Says @user.Message</li>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
