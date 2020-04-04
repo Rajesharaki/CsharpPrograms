@@ -24,6 +24,7 @@ namespace MultiChat.Handlers
             var socketId = Connections.GetId(socket);
             var message = $"{socketId}said: {Encoding.UTF8.GetString(buffer, 0, result.Count)}";
             await SendMessageToAll(message);
+
         }
     }
 }

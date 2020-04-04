@@ -7,7 +7,6 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\bin\Debug\netcoreapp3.1\MultiChat.runtimeconfig.dev.json
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\bin\Debug\netcoreapp3.1\MultiChat.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\bin\Debug\netcoreapp3.1\MultiChat.pdb
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\obj\Debug\netcoreapp3.1\MultiChat.csprojAssemblyReference.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\obj\Debug\netcoreapp3.1\MultiChat.csproj.CoreCompileInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\obj\Debug\netcoreapp3.1\MultiChat.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\MultiChat\MultiChat\obj\Debug\netcoreapp3.1\MultiChat.AssemblyInfoInputs.cache
