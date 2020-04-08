@@ -10,8 +10,8 @@ using SignInAndRegistration.Data;
 namespace SignInAndRegistration.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200404061044_AddingFirstMigration")]
-    partial class AddingFirstMigration
+    [Migration("20200404083230_firstmigrtion")]
+    partial class firstmigrtion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,11 +43,6 @@ namespace SignInAndRegistration.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasData(
-                        new { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
-                        new { Id = "2", Name = "Custmor", NormalizedName = "CUSTOMER" }
-                    );
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SignInAndRegistration.Migrations
 {
-    public partial class AddingFirstMigration : Migration
+    public partial class firstmigrtion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -152,16 +152,6 @@ namespace SignInAndRegistration.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "1", null, "Admin", "ADMIN" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetRoles",
-                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2", null, "Custmor", "CUSTOMER" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -36,9 +36,20 @@ namespace SignInAndRegistration.Controllers
             var result = await _usermanager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                await _usermanager.AddToRoleAsync(user, "Custmor");
+                //Genarate Email Token
+                var emailtoken =await _usermanager.GenerateEmailConfirmationTokenAsync(user);
+                //Genarate ConfiramationLink for email
+                var confirmationlink = Url.Action("Confirmation", "Auth", new
+                {
+                    id=user.Id,
+                    token = emailtoken
+                },Request.Scheme);
             }
-            return Ok(new { Username = user.UserName });
+            return Ok(new { token = user.UserName });
+        }
+        public void Confirmation()
+        {
+
         }
         [HttpPost("Login")]
         public async Task<ActionResult>Login([FromBody]LoginViewModel model)

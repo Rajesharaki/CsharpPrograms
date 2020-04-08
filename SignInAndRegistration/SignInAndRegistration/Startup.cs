@@ -43,7 +43,7 @@ namespace SignInAndRegistration
              }
             ).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
             services.AddAuthentication(
-                Options=> {
+                  Options=> {
                     Options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     Options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                     Options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;

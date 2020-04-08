@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace LoginAndRegistration.Models
 {
@@ -14,6 +15,6 @@ namespace LoginAndRegistration.Models
         {
 
         }
-        public DbSet<Users> Users { get;set; }
+        public DbSet<IdentityUser> Users { get;set; }
     }
 }

@@ -14,7 +14,7 @@ namespace SignInAndRegistration.Data
         {
 
         }
-        protected override void OnModelCreating(ModelBuilder builder)
+       /* protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             #region "Seed Data"
@@ -23,6 +23,6 @@ namespace SignInAndRegistration.Data
                 new { Id="2",Name="Custmor",NormalizedName="CUSTOMER"}
              );
             #endregion
-        }
+        }*/
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i3SIepOWUjOFv+Aa+kxwJNAd1RPGuo2X78+mWn3WaNvHWG6OEwS56gOpn4eXzmCx3KVqKIkvEWZONWcMLmOyrA==",
+  "dgSpecHash": "997H7CpY54TT+7C4GSvJAEsD0vsx0JNhlTr3llIrm2MKkBqn9Y+HhzpC6/YMQqx802jCqyscz5tpkOsHcGvhbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rajes\\OneDrive\\Desktop\\WebAPI\\FellowShipPrograms\\SimpleChat\\SimpleChat.csproj",
+  "projectFilePath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\SimpleChat\\SimpleChat.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

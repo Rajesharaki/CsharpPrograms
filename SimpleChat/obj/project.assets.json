@@ -11885,11 +11885,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rajes\\OneDrive\\Desktop\\WebAPI\\FellowShipPrograms\\SimpleChat\\SimpleChat.csproj",
+      "projectUniqueName": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\SimpleChat\\SimpleChat.csproj",
       "projectName": "SimpleChat",
-      "projectPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\WebAPI\\FellowShipPrograms\\SimpleChat\\SimpleChat.csproj",
+      "projectPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\SimpleChat\\SimpleChat.csproj",
       "packagesPath": "C:\\Users\\rajes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\WebAPI\\FellowShipPrograms\\SimpleChat\\obj\\",
+      "outputPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\SimpleChat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rajes\\AppData\\Roaming\\NuGet\\NuGet.Config",
