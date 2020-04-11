@@ -1,9 +1,0 @@
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\bin\Debug\netcoreapp3.1\FundooRepository.deps.json
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\bin\Debug\netcoreapp3.1\FundooRepository.dll
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\obj\Debug\netcoreapp3.1\FundooRepository.AssemblyInfoInputs.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\obj\Debug\netcoreapp3.1\FundooRepository.AssemblyInfo.cs
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\bin\Debug\netcoreapp3.1\FundooRepository.pdb
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\obj\Debug\netcoreapp3.1\FundooRepository.csprojAssemblyReference.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\obj\Debug\netcoreapp3.1\FundooRepository.csproj.CoreCompileInputs.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\obj\Debug\netcoreapp3.1\FundooRepository.dll
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooRepository\obj\Debug\netcoreapp3.1\FundooRepository.pdb
