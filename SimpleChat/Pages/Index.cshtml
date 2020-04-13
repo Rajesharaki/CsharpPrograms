@@ -17,18 +17,7 @@
             <hr />
         </div>
     </div>
-    <div class="row">
-        <div class="col-3">&nbsp;</div>
-        <div class="col-4">
-            <div class="border-dark">
-            @*<ul id="messagesList" class="list-group-item-dark"></ul>*@
-                @foreach (User user in context.users)
-                {
-                    <li>@user.UserName Says @user.Message</li>
-                }
-            </div>
-        </div>
-    </div>
+  <ul id="list"></ul>
 </div>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>

@@ -11,7 +11,7 @@ namespace ChatApplication.Hubs
     /// </summary>
     public class ChatHub : Hub
     {
-        private readonly DataDbContext context;
+         private readonly DataDbContext context;
 
         /// <summary>
         /// injecting the DatabaseContext through the constructor
@@ -26,8 +26,8 @@ namespace ChatApplication.Hubs
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message);
             
-               await context.users.AddAsync(new User {UserName=user, Message=message});
-            await context.SaveChangesAsync();
+               /*await context.users.AddAsync(new User {UserName=user, Message=message});
+            await context.SaveChangesAsync();*/
         }
     }
 }
