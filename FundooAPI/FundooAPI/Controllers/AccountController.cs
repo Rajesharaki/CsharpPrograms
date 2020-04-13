@@ -15,16 +15,20 @@ namespace FundooAPI.Controllers
     {
         private readonly IAccount accountmanager;
 
+        //Constructor Dependency injection (Injecting IAcount Interface)
         public AccountController(IAccount account)
         {
             accountmanager = account;
         }
+
+        //Register Post Method
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
+                //Calling IAccount Async CreateUserAsync Method and Passing Register view Model
                 var result = await accountmanager.CreateUserAsync(model);
                 if (result.Succeeded)
                 {
@@ -42,12 +46,15 @@ namespace FundooAPI.Controllers
                     Msg = "Registration Failed"
                 });
         }
+
+        //Login Post Method
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
+                //Calling IAccount Async SignInAsync Method and Passing Login view Model
                 var result = await accountmanager.SignInAsync(model);
                 if (result.Succeeded)
                 {
@@ -66,22 +73,22 @@ namespace FundooAPI.Controllers
                 Msg = "Not Valid Email and Password"
             });
         }
+
+        //ForgetPassword Post Method and it returns PasswordResetToken
         [HttpPost]
         [Route("Forget")]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
+                /*Calling IAccount Async ForgetPasswordAsync Method and Passing Register view Model
+                and its return Token*/
                 var token = await accountmanager.ForgetPasswordAsync(model);
-                var link = Url.Action("ResetPassword", "Account", new
-                {
-                    Email = model.Email,
-                    token = token
-                }, Request.Scheme);
                 return Ok(new
                 {
-                    Token = link
-                });
+                    Email=model.Email,
+                    Token = token
+                }) ;
             }
             return BadRequest(
                 new
@@ -90,21 +97,16 @@ namespace FundooAPI.Controllers
                     Msg = "Invalid Email"
                 });
         }
+
+        //ResetPassword Post Method 
         [HttpPost]
         [Route("Reset")]
-        public async Task<IActionResult> ResetPassword([FromHeader]string Email,
-            [FromHeader]String token, ResetPasswordViewModel model)
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
-                ResetPasswordViewModel resetmodel = new ResetPasswordViewModel
-                {
-                    Email = Email,
-                    Token = token,
-                    Password = model.Password,
-                    ConfirmPassword = model.ConfirmPassword
-                };
-                var result = await accountmanager.ResetPasswordAsync(resetmodel);
+                //Calling IAccount Async ReserPasswordAsync Method
+                var result = await accountmanager.ResetPasswordAsync(model);
                 if (result.Succeeded)
                 {
                     return Ok(new
@@ -114,12 +116,8 @@ namespace FundooAPI.Controllers
                         Msg = "Successfully Reset your password"
                     }); ;
                 }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
             }
-            return BadRequest(new { str = "hello" });
+            return BadRequest(new { str = "Failed" });
         }
     }
 }

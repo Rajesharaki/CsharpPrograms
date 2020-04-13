@@ -86,7 +86,6 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTestin
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csprojAssemblyReference.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csproj.CoreCompileInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.AssemblyInfoInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.AssemblyInfo.cs
@@ -94,3 +93,4 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTestin
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.genruntimeconfig.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csprojAssemblyReference.cache

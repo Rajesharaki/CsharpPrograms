@@ -6,8 +6,12 @@ using System.Text;
 
 namespace Common.Models
 {
+    /// <summary>
+    /// ResetPasswordViewModel Class
+    /// </summary>
     public class ResetPasswordViewModel
     {
+        [Required]
         public  string Email { get; set;}
         [Required]
         [DataType(DataType.Password)]
