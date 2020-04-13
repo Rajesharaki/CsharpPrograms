@@ -13,5 +13,6 @@ namespace BusinessManager.Interface
         Task<SignInResult> SignInAsync(LoginViewModel model);
         Task<string> ForgetPasswordAsync(ForgetPasswordViewModel model);
         Task<IdentityResult> ResetPasswordAsync(ResetPasswordViewModel model);
+        Task<IdentityResult> ChangePasswordAsync(ChangePasswordViewModel model);
     }
 }

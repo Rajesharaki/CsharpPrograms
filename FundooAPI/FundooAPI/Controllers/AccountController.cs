@@ -119,5 +119,21 @@ namespace FundooAPI.Controllers
             }
             return BadRequest(new { str = "Failed" });
         }
+
+        //ChangePasswordAsync Method
+        [HttpPost]
+        [Route("ChangePassword")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result=await accountmanager.ChangePasswordAsync(model);
+                if (result.Succeeded)
+                {
+                    return Ok(new { Status = "Successfully changed your password" });
+                }
+            }
+            return BadRequest(new { Status = "Failed" });
+        }
     }
 }

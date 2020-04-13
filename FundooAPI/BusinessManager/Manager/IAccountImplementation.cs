@@ -21,6 +21,19 @@ namespace BusinessManager.Manager
             _signInManager = signInManager;
         }
 
+        //ChangePasswordAsync Method
+        public async Task<IdentityResult> ChangePasswordAsync(ChangePasswordViewModel model)
+        {
+            //Find user By using Email
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                return await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+            }
+            return null;
+
+        }
+
         //CreateUserAsync Method
         public async Task<IdentityResult> CreateUserAsync(RegisterViewModel model)
         {

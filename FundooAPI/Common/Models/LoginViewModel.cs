@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Common.Models
 {
+    /// <summary>
+    /// LoginViewModel Class
+    /// </summary>
     public class LoginViewModel
     {
         [Required]

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Common.Models
 {
+    /// <summary>
+    /// ForgetPasswordViewModel Class
+    /// </summary>
     public class ForgetPasswordViewModel
     {
         [Required]
