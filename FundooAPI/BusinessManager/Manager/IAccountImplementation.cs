@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace BusinessManager.Manager
 {
+    /// <summary>
+    /// IAccountImplementation class implementing IAccount interfacce
+    /// </summary>
     public class IAccountImplementation : IAccount
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
-        //Constrctor Dependency injection (Injecting Usermanager and SignInmanager)
+        /// <summary>
+        /// Constructor Injection
+        /// </summary>
+        /// <param name="usermanager">Inject UserManager Manadatory</param>
+        /// <param name="signInManager">Inject SignInManager Mandatory</param>
         public IAccountImplementation(UserManager<IdentityUser> usermanager,
             SignInManager<IdentityUser> signInManager)
         {
@@ -21,7 +28,11 @@ namespace BusinessManager.Manager
             _signInManager = signInManager;
         }
 
-        //ChangePasswordAsync Method
+        /// <summary>
+        /// ChangePasswordAsync Method
+        /// </summary>
+        /// <param name="model">ChangePasswordAsync</param>
+        /// <returns>IdentityResult</returns>
         public async Task<IdentityResult> ChangePasswordAsync(ChangePasswordViewModel model)
         {
             //Find user By using Email
@@ -34,7 +45,11 @@ namespace BusinessManager.Manager
 
         }
 
-        //CreateUserAsync Method
+        /// <summary>
+        /// CreateUserAsync Method
+        /// </summary>
+        /// <param name="model">RegisterViewModel mandatory</param>
+        /// <returns>IdentityResult</returns>
         public async Task<IdentityResult> CreateUserAsync(RegisterViewModel model)
         {
             //Create Identity User
@@ -49,7 +64,11 @@ namespace BusinessManager.Manager
             return await this._userManager.CreateAsync(user, model.Password);
         }
 
-        //ForgetPasswordAsync Method and it returns ResetPassword Token
+        /// <summary>
+        /// ForgetPasswordAsync Method
+        /// </summary>
+        /// <param name="model">ForgetPasswordViewMOdel</param>
+        /// <returns>ResetPasswordToken</returns>
         public async Task<string> ForgetPasswordAsync(ForgetPasswordViewModel model)
         {
             //Find User Email
@@ -62,7 +81,11 @@ namespace BusinessManager.Manager
             return null;
         }
 
-        //ResetPasswordAsync Method
+        /// <summary>
+        /// ResetPasswordAsync Method
+        /// </summary>
+        /// <param name="model">ResetPasswordViewModel</param>
+        /// <returns></returns>
         public async Task<IdentityResult> ResetPasswordAsync(ResetPasswordViewModel model)
         {
             //Find User by using Email
@@ -75,7 +98,11 @@ namespace BusinessManager.Manager
             return null;
         }
 
-        //SignInAsync Method
+        /// <summary>
+        /// SignInAsync Method
+        /// </summary>
+        /// <param name="model">LoginViewModel</param>
+        /// <returns>SignInResult</returns>
         public async Task<SignInResult> SignInAsync(LoginViewModel model)
         {
 
