@@ -4,9 +4,11 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessMa
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\bin\Debug\netcoreapp2.1\Common.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\bin\Debug\netcoreapp2.1\Common.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.csprojAssemblyReference.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.csproj.CoreCompileInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.AssemblyInfoInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.AssemblyInfo.cs
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.csproj.CopyComplete
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\bin\Debug\netcoreapp2.1\FundooRepository.dll
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\bin\Debug\netcoreapp2.1\FundooRepository.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\BusinessManager\obj\Debug\netcoreapp2.1\BusinessManager.csproj.CoreCompileInputs.cache

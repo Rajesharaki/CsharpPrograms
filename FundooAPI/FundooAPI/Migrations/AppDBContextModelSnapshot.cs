@@ -19,6 +19,68 @@ namespace FundooAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Common.Models.LabelViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedDateTime");
+
+                    b.Property<string>("Email");
+
+                    b.Property<bool>("IsArchive");
+
+                    b.Property<bool>("IsTrash");
+
+                    b.Property<string>("LabelNumber");
+
+                    b.Property<string>("Lable");
+
+                    b.Property<DateTime?>("ModifiedDateTime");
+
+                    b.Property<bool>("Pin");
+
+                    b.Property<bool>("Reminder");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Labels");
+                });
+
+            modelBuilder.Entity("Common.Models.NotesViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Color");
+
+                    b.Property<DateTime?>("CreatedDate");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Image");
+
+                    b.Property<bool>("IsArchive");
+
+                    b.Property<bool>("IsTrash");
+
+                    b.Property<DateTime?>("Modifieddate");
+
+                    b.Property<bool>("Pin");
+
+                    b.Property<bool>("Reminder");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notes");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

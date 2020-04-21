@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UNbwghCvsaQVZPl/NEAX1zLPI1o3NJ793knrRqGFwDBXfwGCvg8zp97pxbH709NvceHVYXKhNp1hO12RlleLTg==",
+  "dgSpecHash": "fPjIfo2ufB5fG/P26+kaU9Hyq4BZOqUL3lw6F2nHWlwgurZQBMI49V+WArubOwPUyD/zspAZEAnxV2asa5fDxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\FundooAPI\\FundooRepository\\FundooRepository.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\rajes\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",

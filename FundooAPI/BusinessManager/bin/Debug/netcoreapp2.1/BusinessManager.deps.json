@@ -8,13 +8,26 @@
     ".NETCoreApp,Version=v2.1": {
       "BusinessManager/1.0.0": {
         "dependencies": {
+          "CloudinaryDotNet": "1.10.0",
           "Common": "1.0.0",
+          "FundooRepository": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.1.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.1.1",
           "Microsoft.Extensions.Identity.Core": "2.1.1"
         },
         "runtime": {
           "BusinessManager.dll": {}
+        }
+      },
+      "CloudinaryDotNet/1.10.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {
+            "assemblyVersion": "1.10.0.0",
+            "fileVersion": "1.10.0.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authentication/2.1.1": {
@@ -486,6 +499,14 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -739,6 +760,16 @@
         "runtime": {
           "Common.dll": {}
         }
+      },
+      "FundooRepository/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.1.1",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "FundooRepository.dll": {}
+        }
       }
     }
   },
@@ -747,6 +778,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CloudinaryDotNet/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y4C2BkacylKVAzXFFUBpLOTkevGJgxAYMxGbAghj4wJmlf8F7BG2m9Dg9+SOR6xKcMOXbu2kRw2/UdqP9GSbvA==",
+      "path": "cloudinarydotnet/1.10.0",
+      "hashPath": "cloudinarydotnet.1.10.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.1.1": {
       "type": "package",
@@ -1028,6 +1066,13 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
     "Remotion.Linq/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -1281,6 +1326,11 @@
       "hashPath": "system.threading.tasks.4.0.11.nupkg.sha512"
     },
     "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FundooRepository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

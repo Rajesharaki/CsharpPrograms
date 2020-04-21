@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qPlvHF8DsA+5ASEPQNFsalYGG3o894gayLa7CR4Ji7a5+26j++bzi1/hNYkhZjaWp9V70O5kBz+GVD8FayKyNw==",
+  "dgSpecHash": "m1T+Wh0HL2Rl3mIYc64lTsgZIz6YEYmyXi1Q530Iib6Ncz3yMnSfCxhlE2YUzaVEzynKgHJnINA9KzIYGMHemA==",
   "success": true,
   "projectFilePath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\FundooAPI\\BusinessManager\\BusinessManager.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\rajes\\.nuget\\packages\\cloudinarydotnet\\1.10.0\\cloudinarydotnet.1.10.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.1.1\\microsoft.aspnetcore.authentication.2.1.1.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.1\\microsoft.aspnetcore.authentication.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.1.1\\microsoft.aspnetcore.authentication.cookies.2.1.1.nupkg.sha512",
@@ -51,6 +52,7 @@
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\rajes\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
