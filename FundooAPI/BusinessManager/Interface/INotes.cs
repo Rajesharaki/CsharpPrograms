@@ -20,5 +20,8 @@ namespace BusinessManager.Interface
         Task<bool> Pin(int id, string email);
         Task<bool> Reminder(int id, string email);
         Task<bool> DeleteAllNotes(string email);
+        Task<bool> AddCollbaratorAsync(CollbarateViewModel model);
+        Task<bool> RemoveCollbaratorAsync(string email,int id);
+        List<NotesViewModel> GetAllCollbaratorNotes(string email);
     }
 }

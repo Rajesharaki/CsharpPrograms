@@ -205,6 +205,29 @@
             </summary>
             <returns>IActionResult</returns>
         </member>
+        <member name="M:FundooAPI.Controllers.NotesController.AddCollbaratorAsync(System.String,System.Int32)">
+            <summary>
+            AddCollbaratorAsync method
+            </summary>
+            <param name="Email">Email Mandatory</param>
+            <param name="NoteId">NoteId Mandatory</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FundooAPI.Controllers.NotesController.RemoveCollbaratorAsync(System.String,System.Int32)">
+            <summary>
+            RemoveCollbaratorAsync Method
+            </summary>
+            <param name="Email">Email Mandatory</param>
+             /// <param name="id">Id Mandatory</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FundooAPI.Controllers.NotesController.GetAllCollabaratorNotes(System.String)">
+            <summary>
+            GetAllCollabaratorNotes
+            </summary>
+            <param name="Email">Email Mandatory</param>
+            <returns>IActionResult</returns>
+        </member>
         <member name="T:FundooAPI.Startup">
             <summary>
             StartUp Classs

@@ -30,6 +30,11 @@ namespace BusinessManager.Manager
             _repositary = repositary;
         }
 
+        public Task<bool> AddCollbaratorAsync(CollbarateViewModel model)
+        {
+           return _repositary.AddCollbaratorAsync(model);
+        }
+
         /// <summary>
         /// AddNotesAsync Method
         /// </summary>
@@ -64,6 +69,11 @@ namespace BusinessManager.Manager
         public async Task<bool> DeleteByIdAsync(int id,string email)
         {
             return await _repositary.DeleteByIdAsync(id,email);
+        }
+
+        public List<NotesViewModel> GetAllCollbaratorNotes(string email)
+        {
+            return _repositary.GetAllCollbaratorNotes(email);
         }
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace BusinessManager.Manager
         public async Task<bool> Reminder(int id, string email)
         {
             return await _repositary.Reminder(id,email);
+        }
+
+        public async Task<bool> RemoveCollbaratorAsync(string email,int id)
+        {
+            return await _repositary.RemoveCollbaratorAsync(email,id);
         }
 
         /// <summary>

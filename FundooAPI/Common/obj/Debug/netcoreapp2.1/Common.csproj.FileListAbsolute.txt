@@ -6,4 +6,3 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\Common\obj
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\Common\obj\Debug\netcoreapp2.1\Common.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\Common\obj\Debug\netcoreapp2.1\Common.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\Common\obj\Debug\netcoreapp2.1\Common.csproj.CoreCompileInputs.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\Common\obj\Debug\netcoreapp2.1\Common.csprojAssemblyReference.cache

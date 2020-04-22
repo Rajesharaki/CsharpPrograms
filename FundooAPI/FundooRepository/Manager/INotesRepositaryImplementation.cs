@@ -139,7 +139,7 @@ namespace FundooRepository.Manager
         {
             string Key = "Notes";
             var CacheData = this.distributedCache.GetString(Key);
-            if (CacheData==null)
+            if (CacheData == null)
             {
                 var model = await _context.Notes.FindAsync(id);
                 if (model.Email == email && model.IsArchive == false && model.IsTrash == false)
@@ -291,6 +291,46 @@ namespace FundooRepository.Manager
                 return true;
             }
             return false;
+        }
+
+        public async Task<bool> AddCollbaratorAsync(CollbarateViewModel model)
+        {
+            var Note = this._context.Notes.FirstOrDefault(m => m.Id == model.NoteId);
+            if (Note != null)
+            {
+                await this._context.Collbarator.AddAsync(model);
+                if (await _context.SaveChangesAsync() > 0)
+                    return true;
+            }
+            return false;
+        }
+
+        public async Task<bool> RemoveCollbaratorAsync(string email, int id)
+        {
+            var model = _context.Collbarator.FirstOrDefault(m => m.ReciveEmail == email && m.NoteId == id);
+            if (model != null)
+            {
+                _context.Remove(model);
+                if (await _context.SaveChangesAsync() > 0)
+                    return true;
+            }
+            return false;
+        }
+
+        public List<NotesViewModel> GetAllCollbaratorNotes(string email)
+        {
+            List<NotesViewModel> notesmodelslist = new List<NotesViewModel>();
+            var Collbaratormodels = _context.Collbarator.Where(m => m.ReciveEmail == email).ToList();
+            if (Collbaratormodels.Count != 0)
+            {
+                foreach (var model in Collbaratormodels)
+                {
+                    notesmodelslist.Add(_context.Notes
+                     .FirstOrDefault(m => m.Email == model.SenderEmail && m.Id == model.NoteId));
+                }
+                return notesmodelslist;
+            }
+            return null;
         }
     }
 }

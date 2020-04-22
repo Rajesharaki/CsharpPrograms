@@ -227,5 +227,71 @@ namespace FundooAPI.Controllers
                 return Ok(new { Status = "Successfully deleted" });
             return NotFound(new { Status = "Failed" });
         }
+
+        /// <summary>
+        /// AddCollbaratorAsync method
+        /// </summary>
+        /// <param name="Email">Email Mandatory</param>
+        /// <param name="NoteId">NoteId Mandatory</param>
+        /// <returns>IActionResult</returns>
+        [HttpPost]
+        [Route("AddCollbaratorAsync")]
+        public async Task<IActionResult> AddCollbaratorAsync([FromForm]string Email,[FromForm] int NoteId)
+        {
+            if (Email != null && NoteId > 0)
+            {
+                CollbarateViewModel model = new CollbarateViewModel
+                {
+                    NoteId = NoteId,
+                    SenderEmail = User.Identity.Name,
+                    ReciveEmail = Email
+                };
+                var result=await _notes.AddCollbaratorAsync(model);
+                if (result == true)
+                    return Ok(new { Status = "Successfully Added" });
+                return NotFound(new { Status = "Not found Any Notes with Id " + NoteId });
+            }
+            return BadRequest(new { Status = "Enter Valid Email and ID" });
+        }
+
+        /// <summary>
+        /// RemoveCollbaratorAsync Method
+        /// </summary>
+        /// <param name="Email">Email Mandatory</param>
+        ///  /// <param name="id">Id Mandatory</param>
+        /// <returns>IActionResult</returns>
+        [HttpPost]
+        [Route("RemoveCollbaratorAsync")]
+        public  async Task<IActionResult> RemoveCollbaratorAsync([FromForm]string Email,int id)
+        {
+            if (Email != null)
+            {
+                var result = await _notes.RemoveCollbaratorAsync(Email,id);
+                if (result == true)
+                    return Ok(new { Status = "Successfully Deleted " });
+                return NotFound(new { Status = "Not Found any Notes with Email: " + Email });
+            }
+            return BadRequest(new { Status = "Email is Mandatory" });
+        }
+
+        /// <summary>
+        /// GetAllCollabaratorNotes
+        /// </summary>
+        /// <param name="Email">Email Mandatory</param>
+        /// <returns>IActionResult</returns>
+        [HttpPost]
+        [Route("GetAllCollbaratorNotes")]
+        [AllowAnonymous]
+        public IActionResult GetAllCollabaratorNotes(string Email)
+        {
+            if (Email != null)
+            {
+                var models = _notes.GetAllCollbaratorNotes(Email);
+                if (models != null)
+                    return Ok(new { Notes = models });
+                return NotFound(new { Status = "NotFound any Notes with Email " + Email });
+            }
+            return BadRequest(new { Status = "Email is Mandatory" });
+        }
     }
 }

@@ -23,5 +23,6 @@ namespace FundooRepository.DBContext
         }
         public DbSet<NotesViewModel> Notes { get; set; }
         public DbSet<LabelViewModel> Labels { get; set; }
+        public DbSet<CollbarateViewModel> Collbarator { get; set; }
     }
 }

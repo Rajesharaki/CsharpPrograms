@@ -46,17 +46,17 @@ namespace FundooAPI
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-            ////Registering The DbContext
+            ////Register The DbContext
             services.AddDbContextPool<AppDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DBCS"),
-                b=>b.MigrationsAssembly("FundooAPI")));
+                b => b.MigrationsAssembly("FundooAPI")));
 
-            ////Registering the Identity
-            services.AddIdentity<IdentityUser, IdentityRole>(options=> 
+            ////Register the Identity
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 10;
-                options.Password.RequireLowercase=false;
+                options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
             }).
             AddEntityFrameworkStores<AppDBContext>()
@@ -64,26 +64,38 @@ namespace FundooAPI
             services.AddTransient<IAccount, IAccountImplementation>();
             services.AddTransient<INotes, INotesImplementation>();
             services.AddTransient<INoteRepositary, INotesRepositaryImplementation>();
-            services.AddTransient<ILabel,ILabelImplementation>();
+            services.AddTransient<ILabel, ILabelImplementation>();
             services.AddTransient<ILabelRepositary, ILabelRepositaryImplementation>();
 
-            ////Registering the MVC
-            services.AddMvc(config=> 
+            ////Enable CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCORS", builder =>
+                 {
+                     builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
+                 });
+            });
+
+            ////Register the MVC
+            services.AddMvc(config =>
             {
                 config.ReturnHttpNotAcceptable = true;
                 config.InputFormatters.Add(new XmlSerializerInputFormatter()); //It can take xml request also
                 config.OutputFormatters.Add(new XmlSerializerOutputFormatter()); //it can response in xml format also
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            //Registering the SwaggerGen
-            services.AddSwaggerGen(options=> 
+            //Register the SwaggerGen
+            services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("V2", new Info
                 {
-                    Title = "Fundoo API", Version="V2"
+                    Title = "Fundoo API",
+                    Version = "V2"
                 });
+
                 //Provide api path
                 var xmlpath = AppDomain.CurrentDomain.BaseDirectory + @"FundooAPI.xml";
+
                 //Its includes comments in swagger UI
                 options.IncludeXmlComments(xmlpath);
                 options.AddSecurityDefinition("oauth2", new ApiKeyScheme
@@ -96,32 +108,32 @@ namespace FundooAPI
                 options.OperationFilter<SecurityRequirementsOperationFilter>();
             });
 
-            ////Registering the Authentication
-            services.AddAuthentication(options=> 
+            ////Register the Authentication
+            services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options=> 
+            }).AddJwtBearer(options =>
             {
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
-                    ValidateAudience=true,
-                    ValidIssuer=Configuration["JWT:Issuer"],
-                    ValidAudience=Configuration["JWT:Audiance"],
-                    IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:SigninKey"]))
+                    ValidateAudience = true,
+                    ValidIssuer = Configuration["JWT:Issuer"],
+                    ValidAudience = Configuration["JWT:Audiance"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:SigninKey"]))
                 };
             });
 
-            //// Registering the Redis Cache
+            //// Register the Redis Cache
             services.AddDistributedRedisCache(options =>
             {
                 options.Configuration = "localhost:6379";
                 options.InstanceName = "Fundoo";
-            }) ;
+            });
 
         }
         /// <summary>
@@ -140,13 +152,14 @@ namespace FundooAPI
                 app.UseHsts();
             }
 
+            app.UseCors("EnableCORS");
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseMvc();
             app.UseSwagger();
-            app.UseSwaggerUI(options=> 
+            app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/V2/Swagger.json","SwaggerEndpoint");
+                options.SwaggerEndpoint("/swagger/V2/Swagger.json", "SwaggerEndpoint");
             });
         }
     }
