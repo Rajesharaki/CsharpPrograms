@@ -378,6 +378,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Json.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Mvc.Formatters.Xml/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Razor.Language/2.1.1": {
         "type": "package",
         "compile": {
@@ -3549,6 +3561,7 @@
           "BusinessManager": "1.0.0",
           "FundooRepository": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.1.1",
+          "Microsoft.AspNetCore.Mvc.Formatters.Xml": "2.1.1",
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Microsoft.Extensions.Caching.Redis": "2.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
@@ -3970,6 +3983,19 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Json.xml",
         "microsoft.aspnetcore.mvc.formatters.json.2.0.0.nupkg.sha512",
         "microsoft.aspnetcore.mvc.formatters.json.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Formatters.Xml/2.1.1": {
+      "sha512": "4a4Icc8KYqGL92MYgpecndKWYY6o2WC5aJ2XraFlS7Mr0aiiJ48JK5CefAfVG9G19xhd1Jg8AVUcycrgzfLa8Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.formatters.xml/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Xml.xml",
+        "microsoft.aspnetcore.mvc.formatters.xml.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.formatters.xml.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/2.1.1": {

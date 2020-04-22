@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -45,9 +46,12 @@ namespace FundooAPI
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            ////Registering The DbContext
             services.AddDbContextPool<AppDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DBCS"),
                 b=>b.MigrationsAssembly("FundooAPI")));
+
+            ////Registering the Identity
             services.AddIdentity<IdentityUser, IdentityRole>(options=> 
             {
                 options.Password.RequireDigit = false;
@@ -62,7 +66,16 @@ namespace FundooAPI
             services.AddTransient<INoteRepositary, INotesRepositaryImplementation>();
             services.AddTransient<ILabel,ILabelImplementation>();
             services.AddTransient<ILabelRepositary, ILabelRepositaryImplementation>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            ////Registering the MVC
+            services.AddMvc(config=> 
+            {
+                config.ReturnHttpNotAcceptable = true;
+                config.InputFormatters.Add(new XmlSerializerInputFormatter()); //It can take xml request also
+                config.OutputFormatters.Add(new XmlSerializerOutputFormatter()); //it can response in xml format also
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //Registering the SwaggerGen
             services.AddSwaggerGen(options=> 
             {
                 options.SwaggerDoc("V2", new Info
@@ -82,6 +95,8 @@ namespace FundooAPI
                 });
                 options.OperationFilter<SecurityRequirementsOperationFilter>();
             });
+
+            ////Registering the Authentication
             services.AddAuthentication(options=> 
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
