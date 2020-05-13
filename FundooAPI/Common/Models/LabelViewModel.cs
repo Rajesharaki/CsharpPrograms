@@ -9,6 +9,7 @@ namespace Common.Models
     {
         [Key]
         public int Id { get; set; }
+        public int LabelId { get; set; }
         public string Email { get; set; }
         public string LabelNumber { get; set; }
         public string Lable { get; set; }

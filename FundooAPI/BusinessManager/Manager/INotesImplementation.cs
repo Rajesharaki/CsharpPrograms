@@ -86,6 +86,11 @@ namespace BusinessManager.Manager
             return _repositary.GetAllNotes( email);
         }
 
+        public IQueryable GetNotesAndLabel(int id,string email)
+        {
+            return _repositary.GetNotesAndLabel(id,email);
+        }
+
         /// <summary>
         /// GetNotesByIdAsync Method
         /// </summary>
@@ -109,7 +114,7 @@ namespace BusinessManager.Manager
                 return null;
             var filePath = file.OpenReadStream();
             var fileName = file.FileName;
-            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account("bridgelabzsolution", "722287876843485", "4xcem4PorStyWYuTdXVmcKulNqg");
+            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account("bridgelabzsolution","722287876843485", "4xcem4PorStyWYuTdXVmcKulNqg");
             CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
             var uploadparameters = new ImageUploadParams
             {
@@ -166,6 +171,11 @@ namespace BusinessManager.Manager
         public async Task<bool> RemoveCollbaratorAsync(string email,int id)
         {
             return await _repositary.RemoveCollbaratorAsync(email,id);
+        }
+
+        public IEnumerable<NotesViewModel> Search(string title)
+        {
+            return _repositary.Search(title);
         }
 
         /// <summary>

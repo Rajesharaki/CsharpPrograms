@@ -4,9 +4,11 @@ using FundooAPI.Controllers;
 using FundooRepository.DBContext;
 using FundooRepository.Interface;
 using FundooRepository.Manager;
+using jdk.nashorn.@internal.runtime;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -46,6 +48,13 @@ namespace FundooAPI
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             ////Register The DbContext
             services.AddDbContextPool<AppDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DBCS"),
@@ -61,13 +70,14 @@ namespace FundooAPI
             }).
             AddEntityFrameworkStores<AppDBContext>()
             .AddDefaultTokenProviders();
+
             services.AddTransient<IAccount, IAccountImplementation>();
             services.AddTransient<INotes, INotesImplementation>();
             services.AddTransient<INoteRepositary, INotesRepositaryImplementation>();
             services.AddTransient<ILabel, ILabelImplementation>();
             services.AddTransient<ILabelRepositary, ILabelRepositaryImplementation>();
 
-            ////Enable CORS
+            ///Enable CORS
             services.AddCors(options =>
             {
                 options.AddPolicy("EnableCORS", builder =>
@@ -124,8 +134,13 @@ namespace FundooAPI
                     ValidateAudience = true,
                     ValidIssuer = Configuration["JWT:Issuer"],
                     ValidAudience = Configuration["JWT:Audiance"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:SigninKey"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:SigninKey"])),
+                    RequireExpirationTime = true
                 };
+            }).AddGoogle(options =>
+            {
+                options.ClientId = "66608066577-l1jbv5rqpse8rke17cstafpi9uh7st3e.apps.googleusercontent.com";
+                options.ClientSecret = "z1CXkE9pNKCsOA8gVJJdNx8i";
             });
 
             //// Register the Redis Cache

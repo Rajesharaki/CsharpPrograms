@@ -7,6 +7,7 @@ using Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace FundooAPI.Controllers
 {
@@ -30,21 +31,33 @@ namespace FundooAPI.Controllers
         }
 
         /// <summary>
-        /// AddNotesAsync Method its add the notes
+        /// AddNotesAsync method
         /// </summary>
-        /// <param name="model">NoteModelView Manadatory</param>
-        /// <param name="file">IFromFile Manadatory</param>
-        /// <returns>HttpResponseMessage</returns>
+        /// <param name="file">IFormFile not Mandatory</param>
+        /// <param name="Label_ID">Id Mandatory</param>
+        /// <param name="title">Mandatory</param>
+        /// <param name="description">Mandatory</param>
+        /// <returns>IActionResult</returns>
         [HttpPost]
         [Route("AddNotes")]
-        public async Task<IActionResult> AddNotesAsync(IFormFile file, [FromForm]NotesViewModel model)
+        public async Task<IActionResult> AddNotesAsync(IFormFile file,int Label_ID,string title,string description)
         {
 
-            if (ModelState.IsValid)
+            if (Label_ID>0&&title!=null&&description!=null)
             {
-                model.CreatedDate = DateTime.Now;
-                model.Modifieddate = DateTime.Now;
-                model.Email = User.Identity.Name;
+                NotesViewModel model = new NotesViewModel
+                {
+                    Email = User.Identity.Name,
+                    Title = title,
+                    Description = description,
+                    CreatedDate = DateTime.Now,
+                    Modifieddate = DateTime.Now,
+                    IsArchive = false,
+                    IsTrash=false,
+                    Pin=false,
+                    Reminder=false,
+                    LabelId=Label_ID
+                };
                 var result = await _notes.AddNotesAsync(file, model);
                 if (result == true)
                 {
@@ -86,7 +99,7 @@ namespace FundooAPI.Controllers
             string Email = User.Identity.Name;
             List<NotesViewModel> model = _notes.GetAllNotes(Email).ToList();
             if (model.Count > 0)
-                return Ok(new { Labels = model });
+                return Ok(new { Notes = model });
             return NotFound(new { Stauts = "Not Found Any Notes with this Email: " + Email });
         }
 
@@ -221,77 +234,54 @@ namespace FundooAPI.Controllers
         [Route("DeleteAllNotes")]
         public async Task<IActionResult> DeleteAllNotesAsync()
         {
-            string email=User.Identity.Name;
-            var result=await _notes.DeleteAllNotes(email);
+            string email = User.Identity.Name;
+            var result = await _notes.DeleteAllNotes(email);
             if (result == true)
                 return Ok(new { Status = "Successfully deleted" });
             return NotFound(new { Status = "Failed" });
         }
 
         /// <summary>
-        /// AddCollbaratorAsync method
+        /// GetNotesAndLabel
         /// </summary>
-        /// <param name="Email">Email Mandatory</param>
-        /// <param name="NoteId">NoteId Mandatory</param>
+        /// <param name="Note_Id">Id Mandatory</param>
         /// <returns>IActionResult</returns>
         [HttpPost]
-        [Route("AddCollbaratorAsync")]
-        public async Task<IActionResult> AddCollbaratorAsync([FromForm]string Email,[FromForm] int NoteId)
+        [Route("GetNotesAndLabel")]
+        public IActionResult GetNotesAndLabel(int Note_Id)
         {
-            if (Email != null && NoteId > 0)
+            if (Note_Id > 0)
             {
-                CollbarateViewModel model = new CollbarateViewModel
+                string email = User.Identity.Name;
+                var model=_notes.GetNotesAndLabel(Note_Id,email);
+                if (model.Any())
                 {
-                    NoteId = NoteId,
-                    SenderEmail = User.Identity.Name,
-                    ReciveEmail = Email
-                };
-                var result=await _notes.AddCollbaratorAsync(model);
-                if (result == true)
-                    return Ok(new { Status = "Successfully Added" });
-                return NotFound(new { Status = "Not found Any Notes with Id " + NoteId });
+                    return Ok(new { NotesAndLabels = model });
+                }
+                return NotFound(new { Status="Not found any notes with Id ="+Note_Id});
             }
-            return BadRequest(new { Status = "Enter Valid Email and ID" });
+            return BadRequest(new { Status = "Id is Mandatory and Id should be more than Zero" });
         }
 
         /// <summary>
-        /// RemoveCollbaratorAsync Method
+        /// SearchNotes
         /// </summary>
-        /// <param name="Email">Email Mandatory</param>
-        ///  /// <param name="id">Id Mandatory</param>
+        /// <param name="Title">Mandatory</param>
         /// <returns>IActionResult</returns>
         [HttpPost]
-        [Route("RemoveCollbaratorAsync")]
-        public  async Task<IActionResult> RemoveCollbaratorAsync([FromForm]string Email,int id)
+        [Route("SearchNotes")]
+        public IActionResult SearchNotes(string Title)
         {
-            if (Email != null)
+            if (Title != null)
             {
-                var result = await _notes.RemoveCollbaratorAsync(Email,id);
-                if (result == true)
-                    return Ok(new { Status = "Successfully Deleted " });
-                return NotFound(new { Status = "Not Found any Notes with Email: " + Email });
+                var models=_notes.Search(Title);
+                if (models.Count()!=0)
+                {
+                    return Ok(new { Notes=models});
+                }
+                return NotFound(new { Status="Not Found any notes with Title= "+Title});
             }
-            return BadRequest(new { Status = "Email is Mandatory" });
-        }
-
-        /// <summary>
-        /// GetAllCollabaratorNotes
-        /// </summary>
-        /// <param name="Email">Email Mandatory</param>
-        /// <returns>IActionResult</returns>
-        [HttpPost]
-        [Route("GetAllCollbaratorNotes")]
-        [AllowAnonymous]
-        public IActionResult GetAllCollabaratorNotes(string Email)
-        {
-            if (Email != null)
-            {
-                var models = _notes.GetAllCollbaratorNotes(Email);
-                if (models != null)
-                    return Ok(new { Notes = models });
-                return NotFound(new { Status = "NotFound any Notes with Email " + Email });
-            }
-            return BadRequest(new { Status = "Email is Mandatory" });
+            return BadRequest(new {Status="Title is mandatory"});
         }
     }
 }

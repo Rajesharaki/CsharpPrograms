@@ -1,6 +1,7 @@
 ﻿using Common.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,5 +22,7 @@ namespace FundooRepository.Interface
         Task<bool> AddCollbaratorAsync(CollbarateViewModel model);
         Task<bool> RemoveCollbaratorAsync(string email,int id);
         List<NotesViewModel> GetAllCollbaratorNotes(string email);
+        IQueryable GetNotesAndLabel(int id,string email);
+        IEnumerable<NotesViewModel> Search(string title);
     }
 }

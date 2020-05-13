@@ -156,7 +156,6 @@ namespace FundooRepository.Manager
                 return model;
             }
         }
-
         /// <summary>
         /// IsArchive Method
         /// </summary>
@@ -331,6 +330,33 @@ namespace FundooRepository.Manager
                 return notesmodelslist;
             }
             return null;
+        }
+
+        public IQueryable GetNotesAndLabel(int id,string email)
+        {
+            var model = _context.Notes.Where(e=>e.Id==id&&e.Email==email)
+                        .Join(_context.Labels,
+                         Notes => Notes.LabelId,
+                         Labels => Labels.LabelId,
+                        (Notes, Labels) => new
+                         {
+                            Notes_LabelId=Notes.LabelId,
+                            Notes_Title = Notes.Title,
+                            Notes_Description = Notes.Description,
+                            Notes_CreatedDateAndTime = Notes.CreatedDate,
+                            Notes_ModeifiedDateAndTime = Notes.Modifieddate,
+                            Label_Id=Labels.LabelId,
+                            LabelNumber = Labels.LabelNumber,
+                            Label_Name = Labels.Lable,
+                            Label_CreatedDateAndTime = Labels.CreatedDateTime,
+                            Label_ModifiedDateAndTime = Labels.ModifiedDateTime
+                         });
+            return model;
+        }
+
+        public IEnumerable<NotesViewModel> Search(string title)
+        {
+            return _context.Notes.Where(e=>e.Title.StartsWith(title));
         }
     }
 }

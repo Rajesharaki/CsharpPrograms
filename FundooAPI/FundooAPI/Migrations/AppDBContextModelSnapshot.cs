@@ -50,6 +50,8 @@ namespace FundooAPI.Migrations
 
                     b.Property<bool>("IsTrash");
 
+                    b.Property<int>("LabelId");
+
                     b.Property<string>("LabelNumber");
 
                     b.Property<string>("Lable");
@@ -84,6 +86,8 @@ namespace FundooAPI.Migrations
                     b.Property<bool>("IsArchive");
 
                     b.Property<bool>("IsTrash");
+
+                    b.Property<int>("LabelId");
 
                     b.Property<DateTime?>("Modifieddate");
 

@@ -19,20 +19,8 @@ namespace UnitTesting
             service.Setup(p => p.AddLabelAsync(It.IsAny<LabelViewModel>())).ReturnsAsync((bool value) => value);
             var controller = new LabelController(service.Object);
 
-            //arrange
-            var model = new LabelViewModel
-            {
-                Email = "rajeshamadan@gmail.com",
-                LabelNumber = "22r",
-                Lable = "Fundooapi",
-                IsArchive = false,
-                IsTrash = false,
-                Pin = false,
-                Reminder=false
-            };
-
             //act
-            var result=await controller.AddLabelAync(model);
+            var result = await controller.AddLabelAsync(2, "100", "hello");
             var response = result as OkObjectResult;
 
             //assert
@@ -51,7 +39,7 @@ namespace UnitTesting
             var model = new LabelViewModel();
 
             //act
-            var result = await controller.AddLabelAync(model);
+            var result = await controller.AddLabelAsync(2, "100", "hello");
             var response = result as BadRequestObjectResult;
 
             //assert

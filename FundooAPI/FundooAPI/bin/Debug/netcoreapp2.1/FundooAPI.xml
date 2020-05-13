@@ -52,6 +52,52 @@
             <param name="model">ChangePasswordViewModel</param>
             <returns>IActionResult</returns>        
         </member>
+        <member name="M:FundooAPI.Controllers.AccountController.Logout">
+            <summary>
+            Logout
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FundooAPI.Controllers.AccountController.LoginWithGoogle">
+            <summary>
+            Login with google
+            </summary>
+            <returns>IAction Result</returns>
+        </member>
+        <member name="T:FundooAPI.Controllers.CollbaratorController">
+            <summary>
+            Collbarator Controller
+            </summary>
+        </member>
+        <member name="M:FundooAPI.Controllers.CollbaratorController.#ctor(BusinessManager.Interface.INotes)">
+            <summary>
+            CollbaratorController Constructor
+            </summary>
+            <param name="notes">Mandatory</param>
+        </member>
+        <member name="M:FundooAPI.Controllers.CollbaratorController.AddCollbaratorAsync(System.String,System.Int32)">
+            <summary>
+            AddCollbaratorAsync method
+            </summary>
+            <param name="Email">Email Mandatory</param>
+            <param name="NoteId">NoteId Mandatory</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FundooAPI.Controllers.CollbaratorController.RemoveCollbaratorAsync(System.String,System.Int32)">
+            <summary>
+            RemoveCollbaratorAsync Method
+            </summary>
+            <param name="Email">Email Mandatory</param>
+             /// <param name="id">Id Mandatory</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FundooAPI.Controllers.CollbaratorController.GetAllCollabaratorNotes(System.String)">
+            <summary>
+            GetAllCollabaratorNotes
+            </summary>
+            <param name="Email">Email Mandatory</param>
+            <returns>IActionResult</returns>
+        </member>
         <member name="T:FundooAPI.Controllers.LabelController">
             <summary>
             LabelController Class
@@ -63,11 +109,13 @@
             </summary>
             <param name="label">constructor injection</param>
         </member>
-        <member name="M:FundooAPI.Controllers.LabelController.AddLabelAync(Common.Models.LabelViewModel)">
+        <member name="M:FundooAPI.Controllers.LabelController.AddLabelAsync(System.Int32,System.String,System.String)">
             <summary>
-            AddLabelAsync Method
+            AddLabelAsync method
             </summary>
-            <param name="model">LabelViewModel Mandatory</param>
+            <param name="LabelNumber">Mandatory</param>
+            <param name="LabelName">Mandatory</param>
+            <param name="Label_ID">Mandatory</param>
             <returns>IActionResult</returns>
         </member>
         <member name="M:FundooAPI.Controllers.LabelController.GetAllLablesAsync">
@@ -135,13 +183,15 @@
             </summary>
             <param name="notes">inject INotes interface</param>
         </member>
-        <member name="M:FundooAPI.Controllers.NotesController.AddNotesAsync(Microsoft.AspNetCore.Http.IFormFile,Common.Models.NotesViewModel)">
+        <member name="M:FundooAPI.Controllers.NotesController.AddNotesAsync(Microsoft.AspNetCore.Http.IFormFile,System.Int32,System.String,System.String)">
             <summary>
-            AddNotesAsync Method its add the notes
+            AddNotesAsync method
             </summary>
-            <param name="model">NoteModelView Manadatory</param>
-            <param name="file">IFromFile Manadatory</param>
-            <returns>HttpResponseMessage</returns>
+            <param name="file">IFormFile not Mandatory</param>
+            <param name="Label_ID">Id Mandatory</param>
+            <param name="title">Mandatory</param>
+            <param name="description">Mandatory</param>
+            <returns>IActionResult</returns>
         </member>
         <member name="M:FundooAPI.Controllers.NotesController.GetNotesByIdAsync(System.Int32)">
             <summary>
@@ -205,27 +255,18 @@
             </summary>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:FundooAPI.Controllers.NotesController.AddCollbaratorAsync(System.String,System.Int32)">
+        <member name="M:FundooAPI.Controllers.NotesController.GetNotesAndLabel(System.Int32)">
             <summary>
-            AddCollbaratorAsync method
+            GetNotesAndLabel
             </summary>
-            <param name="Email">Email Mandatory</param>
-            <param name="NoteId">NoteId Mandatory</param>
+            <param name="Note_Id">Id Mandatory</param>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:FundooAPI.Controllers.NotesController.RemoveCollbaratorAsync(System.String,System.Int32)">
+        <member name="M:FundooAPI.Controllers.NotesController.SearchNotes(System.String)">
             <summary>
-            RemoveCollbaratorAsync Method
+            SearchNotes
             </summary>
-            <param name="Email">Email Mandatory</param>
-             /// <param name="id">Id Mandatory</param>
-            <returns>IActionResult</returns>
-        </member>
-        <member name="M:FundooAPI.Controllers.NotesController.GetAllCollabaratorNotes(System.String)">
-            <summary>
-            GetAllCollabaratorNotes
-            </summary>
-            <param name="Email">Email Mandatory</param>
+            <param name="Title">Mandatory</param>
             <returns>IActionResult</returns>
         </member>
         <member name="T:FundooAPI.Startup">

@@ -6,9 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.10.0" />
+    <PackageReference Include="Experimental.System.Messaging" Version="1.1.0" />
+    <PackageReference Include="MailKit" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.1.1" />
+    <PackageReference Include="MimeKit" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>

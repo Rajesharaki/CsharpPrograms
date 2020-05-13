@@ -27,7 +27,7 @@ namespace FundooAPI.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAccount accountmanager;
-         private readonly IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
         private readonly IDistributedCache distributedCache;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace FundooAPI.Controllers
                 var result = await accountmanager.SignInAsync(model);
                 if (result.Succeeded)
                 {
-                    var claim = new[] { new Claim(JwtRegisteredClaimNames.UniqueName,model.Email) };
+                    var claim = new[] { new Claim(JwtRegisteredClaimNames.UniqueName, model.Email) };
                     var SignInKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SignInKey"]));
                     var ExpiryInMinutes = Convert.ToInt32(_configuration["JWT:ExpiryInMinutes"]);
                     var Token = new JwtSecurityToken(
@@ -98,16 +98,15 @@ namespace FundooAPI.Controllers
                         audience: _configuration["JWT:Audiance"],
                         expires: DateTime.Now.AddMinutes(ExpiryInMinutes),
                         signingCredentials: new SigningCredentials(SignInKey, SecurityAlgorithms.HmacSha256),
-                        claims:claim
+                        claims: claim
                         );
                     var FinalToken = new JwtSecurityTokenHandler().WriteToken(Token);
                     return Ok(new
                     {
                         Email = model.Email,
-                        Password = model.Password,
                         Msg = "Successfully Login",
                         ExpiryInMinutes = ExpiryInMinutes,
-                        token=FinalToken
+                        token = FinalToken
                     });
                 }
                 return NotFound(new { Msg = "Login Failed please check your Email and Password" });
@@ -134,10 +133,11 @@ namespace FundooAPI.Controllers
                 /*Calling IAccount Async ForgetPasswordAsync Method and Passing Register view Model
                 and its return Token*/
                 var token = await accountmanager.ForgetPasswordAsync(model);
+                var ReciveMsg=accountmanager.SendMsgToMSMQ(token);
+                var result = accountmanager.SendTokenToMail(token, model.Email);
                 return Ok(new
                 {
-                    Email = model.Email,
-                    Token = token
+                    Status = "Check your Mail"
                 });
             }
             return BadRequest(
@@ -192,6 +192,50 @@ namespace FundooAPI.Controllers
                 }
             }
             return BadRequest(new { Status = "Failed" });
+        }
+
+        /// <summary>
+        /// Logout
+        /// </summary>
+        /// <returns>IActionResult</returns>
+        [HttpPost]
+        [Route("Logout")]
+        public IActionResult Logout()
+        {
+             accountmanager.LogoutAsync();
+            return Ok( new {Status="Successfully Logout"});
+        }
+
+        /// <summary>
+        /// Login with google
+        /// </summary>
+        /// <returns>IAction Result</returns>
+        [HttpPost]
+        [Route("LoginWithGoogle")]
+        public async Task<IActionResult> LoginWithGoogle()
+        {
+            var redirectUrl = Url.Action("ExternalCallBack", "Account");
+            var provider = await this.accountmanager.GetExternalAuthenticationSchemesAsync();
+            var properties = this.accountmanager.GoogleLogin(provider.Name, redirectUrl);
+            return new ChallengeResult(provider.Name, properties);
+        }
+
+        [HttpPost, Route("ExternalCallBack")]
+        public async Task<IActionResult> ExternalCallBack(string returnUrl, string remoteError)
+        {
+             if(returnUrl!=null && remoteError== null)
+            {
+                var result = await this.accountmanager.GetExternalLoginInfoAsync();
+                if(result!=null)
+                {
+                    var SignInResult =await this.accountmanager.ExternalLoginSignInAsync(result);
+                    if(SignInResult.Succeeded)
+                    {
+                        return this.Ok("login Successfull");
+                    }
+                }
+            }
+            return this.BadRequest("Failed logging in");
         }
     }
 }

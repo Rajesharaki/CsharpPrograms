@@ -20,5 +20,7 @@ namespace Common.Models
         public bool Pin { get; set; }
         public string Color { get; set; }
         public string Image { get; set; }
+
+        public int LabelId { get; set; }
     }
 }

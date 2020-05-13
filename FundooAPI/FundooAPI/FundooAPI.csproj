@@ -13,8 +13,14 @@
     <Compile Remove="Migrations\20200416052258_AddingNotesModelViewDb.Designer.cs" />
     <Compile Remove="Migrations\20200416092313_AddingNotesDB.cs" />
     <Compile Remove="Migrations\20200416092313_AddingNotesDB.Designer.cs" />
+    <Compile Remove="Migrations\20200417074710_AddingNotesDB.cs" />
+    <Compile Remove="Migrations\20200417074710_AddingNotesDB.Designer.cs" />
     <Compile Remove="Migrations\20200418125744_addingLabelDB.cs" />
     <Compile Remove="Migrations\20200418125744_addingLabelDB.Designer.cs" />
+    <Compile Remove="Migrations\20200419052251_AddingLabelDB.cs" />
+    <Compile Remove="Migrations\20200419052251_AddingLabelDB.Designer.cs" />
+    <Compile Remove="Migrations\20200422090002_addingcollbaratorDB.cs" />
+    <Compile Remove="Migrations\20200422090002_addingcollbaratorDB.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="IKVM" Version="8.1.5717" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.1.1" />

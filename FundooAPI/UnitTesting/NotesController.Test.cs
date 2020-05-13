@@ -37,7 +37,7 @@ namespace UnitTesting
                 Color = "red",
             };
             //act
-            var result=await controller.AddNotesAsync(null,model);
+            var result=await controller.AddNotesAsync(null,2,"title","Description");
             var  response=result as OkObjectResult;
 
             //assert
@@ -51,10 +51,8 @@ namespace UnitTesting
             service.Setup(p => p.AddNotesAsync(It.IsAny<IFormFile>(), It.IsAny<NotesViewModel>())).ReturnsAsync(true);
             var controller = new NotesController(service.Object);
 
-            //arrage
-            var model = new NotesViewModel();
             //act
-            var result = await controller.AddNotesAsync(null, model);
+            var result = await controller.AddNotesAsync(null, 2, "title", "Description");
             var response = result as BadRequestObjectResult;
 
             //assert

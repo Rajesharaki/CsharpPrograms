@@ -26,6 +26,7 @@
         "dependencies": {
           "BusinessManager": "1.0.0",
           "FundooRepository": "1.0.0",
+          "IKVM": "8.1.5717",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.1.1",
           "Microsoft.AspNetCore.Mvc.Formatters.Xml": "2.1.1",
@@ -55,6 +56,188 @@
         },
         "compile": {
           "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        }
+      },
+      "Experimental.System.Messaging/1.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Experimental.System.Messaging.dll": {}
+        }
+      },
+      "IKVM/8.1.5717": {
+        "runtime": {
+          "lib/IKVM.AWT.WinForms.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Beans.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Charsets.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Cldrdata.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Corba.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Core.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Jdbc.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Localedata.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Management.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Media.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Misc.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Naming.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Nashorn.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Remoting.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Security.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.SwingAWT.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Text.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Tools.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.Util.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.API.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.Bind.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.Crypto.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.Parse.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.Transform.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.WebServices.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.OpenJDK.XML.XPath.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.Runtime.JNI.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          },
+          "lib/IKVM.Runtime.dll": {
+            "assemblyVersion": "8.1.5717.0",
+            "fileVersion": "8.1.5717.0"
+          }
+        },
+        "compile": {
+          "lib/IKVM.AWT.WinForms.dll": {},
+          "lib/IKVM.OpenJDK.Beans.dll": {},
+          "lib/IKVM.OpenJDK.Charsets.dll": {},
+          "lib/IKVM.OpenJDK.Cldrdata.dll": {},
+          "lib/IKVM.OpenJDK.Corba.dll": {},
+          "lib/IKVM.OpenJDK.Core.dll": {},
+          "lib/IKVM.OpenJDK.Jdbc.dll": {},
+          "lib/IKVM.OpenJDK.Localedata.dll": {},
+          "lib/IKVM.OpenJDK.Management.dll": {},
+          "lib/IKVM.OpenJDK.Media.dll": {},
+          "lib/IKVM.OpenJDK.Misc.dll": {},
+          "lib/IKVM.OpenJDK.Naming.dll": {},
+          "lib/IKVM.OpenJDK.Nashorn.dll": {},
+          "lib/IKVM.OpenJDK.Remoting.dll": {},
+          "lib/IKVM.OpenJDK.Security.dll": {},
+          "lib/IKVM.OpenJDK.SwingAWT.dll": {},
+          "lib/IKVM.OpenJDK.Text.dll": {},
+          "lib/IKVM.OpenJDK.Tools.dll": {},
+          "lib/IKVM.OpenJDK.Util.dll": {},
+          "lib/IKVM.OpenJDK.XML.API.dll": {},
+          "lib/IKVM.OpenJDK.XML.Bind.dll": {},
+          "lib/IKVM.OpenJDK.XML.Crypto.dll": {},
+          "lib/IKVM.OpenJDK.XML.Parse.dll": {},
+          "lib/IKVM.OpenJDK.XML.Transform.dll": {},
+          "lib/IKVM.OpenJDK.XML.WebServices.dll": {},
+          "lib/IKVM.OpenJDK.XML.XPath.dll": {},
+          "lib/IKVM.Runtime.JNI.dll": {},
+          "lib/IKVM.Runtime.dll": {}
+        }
+      },
+      "MailKit/2.1.1": {
+        "dependencies": {
+          "MimeKit": "2.6.0",
+          "NETStandard.Library": "2.0.3",
+          "Portable.BouncyCastle": "1.8.5",
+          "System.Data.Common": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Net.Http": "4.3.0",
+          "System.Net.NameResolution": "4.3.0",
+          "System.Net.NetworkInformation": "4.3.0",
+          "System.Net.Security": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MailKit.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MailKit.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -235,6 +418,24 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "MimeKit/2.6.0": {
+        "dependencies": {
+          "Portable.BouncyCastle": "1.8.5",
+          "System.Data.Common": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MimeKit.dll": {
+            "assemblyVersion": "2.6.0.0",
+            "fileVersion": "2.6.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MimeKit.dll": {}
+        }
+      },
       "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -258,6 +459,17 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.5": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.5.0",
+            "fileVersion": "1.8.5.50"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
       "runtime.native.System.Net.Security/4.3.0": {
@@ -539,6 +751,18 @@
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
+      "System.Data.Common/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
       "System.Linq.Parallel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -568,6 +792,33 @@
           "System.Security.Principal.Windows": "4.5.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        }
+      },
+      "System.Net.NetworkInformation/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.0",
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.Sockets": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Security.Principal.Windows": "4.5.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Overlapped": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
           "runtime.native.System": "4.3.0"
         }
       },
@@ -613,6 +864,14 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Threading.Overlapped/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Handles": "4.3.0"
+        }
+      },
       "System.Threading.ThreadPool/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0",
@@ -630,10 +889,13 @@
         "dependencies": {
           "CloudinaryDotNet": "1.10.0",
           "Common": "1.0.0",
+          "Experimental.System.Messaging": "1.1.0",
           "FundooRepository": "1.0.0",
+          "MailKit": "2.1.1",
           "Microsoft.AspNetCore.Identity": "2.1.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.1.1",
-          "Microsoft.Extensions.Identity.Core": "2.1.1"
+          "Microsoft.Extensions.Identity.Core": "2.1.1",
+          "MimeKit": "2.6.0"
         },
         "runtime": {
           "BusinessManager.dll": {}
@@ -3605,6 +3867,9 @@
           "Microsoft.NETCore.Platforms": "2.1.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
+        "compile": {
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
         "compileOnly": true
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -3796,6 +4061,27 @@
       "path": "cloudinarydotnet/1.10.0",
       "hashPath": "cloudinarydotnet.1.10.0.nupkg.sha512"
     },
+    "Experimental.System.Messaging/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vub7Mtt2WFdFKTZKECVuZx6feP5kUpS9EfVy+Yu4GDfdlMwivRdX4TbdkDYS2lKqCjqzUbnxTbJei1IOqC+CnA==",
+      "path": "experimental.system.messaging/1.1.0",
+      "hashPath": "experimental.system.messaging.1.1.0.nupkg.sha512"
+    },
+    "IKVM/8.1.5717": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5olx8s2XYTfu6xu59ozQi9Jz5s6IHdJTK+XEFKpPxxVHoQWphb2G78btQTu1Z69I18n0tpcJ/EK5Dg2wmHJQIA==",
+      "path": "ikvm/8.1.5717",
+      "hashPath": "ikvm.8.1.5717.nupkg.sha512"
+    },
+    "MailKit/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pAzEQO8OovHc0wHQquBqpgCxiSzVwTBNS6HL4KJ14ObfNImvhzYMJP0LRfzgbhzlzRx4RCS0jZyuVUz1i9dt1g==",
+      "path": "mailkit/2.1.1",
+      "hashPath": "mailkit.2.1.1.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3880,6 +4166,13 @@
       "path": "microsoft.win32.primitives/4.3.0",
       "hashPath": "microsoft.win32.primitives.4.3.0.nupkg.sha512"
     },
+    "MimeKit/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-254R07ICLw0mIEhXEcYsALGF7Tgt8mAOfD7lcui1XXBdQGbpj5WFOzx9TojSMPBt2ZRBfolWhoSC9tnTVY7wRw==",
+      "path": "mimekit/2.6.0",
+      "hashPath": "mimekit.2.6.0.nupkg.sha512"
+    },
     "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
@@ -3893,6 +4186,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EaCgmntbH1sOzemRTqyXSqYjB6pLH7VCYHhhDYZ59guHSD5qPwhIYa7kfy0QUlmTRt9IXhaXdFhNuBUArp70Ng==",
+      "path": "portable.bouncycastle/1.8.5",
+      "hashPath": "portable.bouncycastle.1.8.5.nupkg.sha512"
     },
     "runtime.native.System.Net.Security/4.3.0": {
       "type": "package",
@@ -3999,6 +4299,13 @@
       "path": "system.composition.typedparts/1.0.31",
       "hashPath": "system.composition.typedparts.1.0.31.nupkg.sha512"
     },
+    "System.Data.Common/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
+      "path": "system.data.common/4.3.0",
+      "hashPath": "system.data.common.4.3.0.nupkg.sha512"
+    },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4013,6 +4320,13 @@
       "path": "system.net.nameresolution/4.3.0",
       "hashPath": "system.net.nameresolution.4.3.0.nupkg.sha512"
     },
+    "System.Net.NetworkInformation/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zNVmWVry0pAu7lcrRBhwwU96WUdbsrGL3azyzsbXmVNptae1+Za+UgOe9Z6s8iaWhPn7/l4wQqhC56HZWq7tkg==",
+      "path": "system.net.networkinformation/4.3.0",
+      "hashPath": "system.net.networkinformation.4.3.0.nupkg.sha512"
+    },
     "System.Net.Security/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4026,6 +4340,13 @@
       "sha512": "sha512-m6icV6TqQOAdgt5N/9I5KNpjom/5NFtkmGseEH+AK/hny8XrytLH3+b5M8zL/Ycg3fhIocFpUMyl/wpFnVRvdw==",
       "path": "system.net.sockets/4.3.0",
       "hashPath": "system.net.sockets.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Overlapped/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m3HQ2dPiX/DSTpf+yJt8B0c+SRvzfqAJKx+QDWi+VLhz8svLT23MVjEOHPF/KiSLeArKU/iHescrbLd3yVgyNg==",
+      "path": "system.threading.overlapped/4.3.0",
+      "hashPath": "system.threading.overlapped.4.3.0.nupkg.sha512"
     },
     "System.Threading.ThreadPool/4.3.0": {
       "type": "package",

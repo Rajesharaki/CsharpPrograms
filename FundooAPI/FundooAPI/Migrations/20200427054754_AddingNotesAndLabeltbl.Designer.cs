@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundooAPI.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20200417074710_AddingNotesDB")]
-    partial class AddingNotesDB
+    [Migration("20200427054754_AddingNotesAndLabeltbl")]
+    partial class AddingNotesAndLabeltbl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,54 @@ namespace FundooAPI.Migrations
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Common.Models.CollbarateViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("NoteId");
+
+                    b.Property<string>("ReciveEmail");
+
+                    b.Property<string>("SenderEmail");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Collbarator");
+                });
+
+            modelBuilder.Entity("Common.Models.LabelViewModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedDateTime");
+
+                    b.Property<string>("Email");
+
+                    b.Property<bool>("IsArchive");
+
+                    b.Property<bool>("IsTrash");
+
+                    b.Property<int>("LabelId");
+
+                    b.Property<string>("LabelNumber");
+
+                    b.Property<string>("Lable");
+
+                    b.Property<DateTime?>("ModifiedDateTime");
+
+                    b.Property<bool>("Pin");
+
+                    b.Property<bool>("Reminder");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Labels");
+                });
 
             modelBuilder.Entity("Common.Models.NotesViewModel", b =>
                 {
@@ -40,6 +88,8 @@ namespace FundooAPI.Migrations
                     b.Property<bool>("IsArchive");
 
                     b.Property<bool>("IsTrash");
+
+                    b.Property<int>("LabelId");
 
                     b.Property<DateTime?>("Modifieddate");
 

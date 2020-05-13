@@ -31,19 +31,31 @@ namespace FundooAPI.Controllers
         }
 
         /// <summary>
-        /// AddLabelAsync Method
+        /// AddLabelAsync method
         /// </summary>
-        /// <param name="model">LabelViewModel Mandatory</param>
+        /// <param name="LabelNumber">Mandatory</param>
+        /// <param name="LabelName">Mandatory</param>
+        /// <param name="Label_ID">Mandatory</param>
         /// <returns>IActionResult</returns>
         [HttpPost]
         [Route("AddLabel")]
-        public async Task<IActionResult> AddLabelAync([FromForm]LabelViewModel model)
+        public async Task<IActionResult> AddLabelAsync(int Label_ID,string LabelNumber,string LabelName)
         {
             if (ModelState.IsValid)
             {
-                model.Email = User.Identity.Name;
-                model.CreatedDateTime = DateTime.Now;
-                model.ModifiedDateTime = DateTime.Now;
+                LabelViewModel model = new LabelViewModel
+                {
+                    Email = User.Identity.Name,
+                    LabelId=Label_ID,
+                    LabelNumber = LabelNumber,
+                    Lable = LabelName,
+                    CreatedDateTime = DateTime.Now,
+                    ModifiedDateTime = DateTime.Now,
+                    IsArchive = false,
+                    IsTrash = false,
+                    Pin = false,
+                    Reminder = false,
+                };
                 var result=await _label.AddLabelAsync(model);
                 if (result == true)
                     return Ok(new { Status = "Label Successfully added " });
@@ -201,7 +213,5 @@ namespace FundooAPI.Controllers
             }
             return BadRequest(new { Status = "Id is Mandatory and Id should be Greter than 0 please enter valid id" });
         }
-
-
     }
 }
