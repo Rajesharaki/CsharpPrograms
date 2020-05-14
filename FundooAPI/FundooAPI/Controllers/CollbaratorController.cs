@@ -64,11 +64,13 @@ namespace FundooAPI.Controllers
         /// <param name="msg"></param>
         /// <param name="title"></param>
         /// <returns></returns>
+        [HttpGet]
+        [Route("PushNofication")]
         public dynamic PushNotification(string DeviceToken, string msg, string title)
         {
             string serverKey = "AAAAzAVjb4c:APA91bEl-9-9f1TbXe0FCRW7IEokbP3MwVwutMTPU40vWN8g9obU9qF3QycNsFq_tltrihPikqjg05Yh8Oo4Ik7znZ7JNwG76awCl_Ahokj3mEEBvLiVxeYVR8SYvnNwZeNXYCRoKGIz";
             string senderId = "364117384819";
-            var result = "-1";
+           // var result = "-1";
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://fcm.googleapis.com/fcm/send");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Headers.Add(string.Format("Authorization: key={0}", serverKey));
