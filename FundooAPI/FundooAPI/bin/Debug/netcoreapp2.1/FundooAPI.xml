@@ -83,6 +83,15 @@
             <param name="NoteId">NoteId Mandatory</param>
             <returns>IActionResult</returns>
         </member>
+        <member name="M:FundooAPI.Controllers.CollbaratorController.PushNotification(System.String,System.String,System.String)">
+            <summary>
+            PushNotification method
+            </summary>
+            <param name="DeviceToken"></param>
+            <param name="msg"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
         <member name="M:FundooAPI.Controllers.CollbaratorController.RemoveCollbaratorAsync(System.String,System.Int32)">
             <summary>
             RemoveCollbaratorAsync Method
