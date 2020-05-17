@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj": {}
+    "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj": {
+    "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj",
-        "projectName": "UserEngagementReport",
-        "projectPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj",
+        "projectUniqueName": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj",
+        "projectName": "ConsumerUserEngagementReports",
+        "projectPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj",
         "packagesPath": "C:\\Users\\rajes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\obj\\",
+        "outputPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rajes\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,10 +52,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.2, )"
-            },
-            "Microsoft.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[3.1.4, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

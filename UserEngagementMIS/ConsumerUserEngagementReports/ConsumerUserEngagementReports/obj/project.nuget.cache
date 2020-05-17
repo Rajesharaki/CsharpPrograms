@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+riEThF20y2uiQSCF3qq/XwCZImM6rFBLfbnxFzXRuTAGgGNAxHG6D6cf79RiA2VZMkrhimKl9QJGeaxQI7tIQ==",
+  "dgSpecHash": "qHcznU9fc4/4ym18bF0//pX1pdwR26fXXF8VOj/+ZODC13qM4YFOKIRVsIZ/FkL07SSJeFa6Jht+hVqE/WRQfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj",
+  "projectFilePath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rajes\\.nuget\\packages\\epplus.core\\1.5.4\\epplus.core.1.5.4.nupkg.sha512",
     "C:\\Users\\rajes\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",

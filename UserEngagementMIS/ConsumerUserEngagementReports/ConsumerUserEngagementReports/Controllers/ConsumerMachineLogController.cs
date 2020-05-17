@@ -4,13 +4,13 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ConsumerUserEngagementReports.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using OfficeOpenXml;
-using UserEngagementReport.Models;
 
-namespace UserEngagementReport.Controllers
+namespace ConsumerUserEngagementReports.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,12 +25,12 @@ namespace UserEngagementReport.Controllers
 
         [HttpGet]
         [Route("ExecelReport")]
-        public  async Task<IActionResult> ExecelReport()
+        public async Task<IActionResult> ExecelReport()
         {
             string cs = _configuration.GetConnectionString("DBCS");
             List<SummaryTableViewModel> list = new List<SummaryTableViewModel>();
 
-            using (SqlConnection con=new SqlConnection(cs))
+            using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand("Sp_MIS_SummaryTable", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -43,13 +43,13 @@ namespace UserEngagementReport.Controllers
                     model.User_Email = reader["User_Email"].ToString();
                     model.Total_Cpu_Count = Convert.ToInt32(reader["Total_Cpu_Count"]);
                     model.Total_Cpu_Working_Time = Convert.ToDecimal(reader["Total_Cpu_Working_Time"]);
-                    model.Total_Cpu_idle_Time= Convert.ToDecimal(reader["Total_Cpu_idle_Time"]);
+                    model.Total_Cpu_idle_Time = Convert.ToDecimal(reader["Total_Cpu_idle_Time"]);
                     model.Avg_Cpu_Percent = Convert.ToDouble(reader["Avg_Cpu_Percent"]);
                     model.Total_number_of_bytes_received = Convert.ToInt64(reader["Total_number_of_bytes_received"]);
                     model.Total_number_of_bytes_sent = Convert.ToInt64(reader["Total_number_of_bytes_sent"]);
                     model.Total_number_of_files_changed = Convert.ToInt32(reader["Total_number_of_files_changed"]);
                     model.Total_number_of_packets_receieved = Convert.ToInt64(reader["Total_number_of_packets_recived"]);
-                    model.Total_number_of_packets_sent =Convert.ToInt64(reader["Total_number_of_packets_sent"]);
+                    model.Total_number_of_packets_sent = Convert.ToInt64(reader["Total_number_of_packets_sent"]);
                     model.Total_nuber_of_software_interrupts_since_boot = Convert.ToDecimal(reader["Total_number_of_software_interrupts_since_boot"]);
                     model.Avg_Cpu_load_over_in_1_min = Convert.ToDecimal(reader["Avg_Cpu_load_over_in_1_min"]);
                     model.Avg_Cpu_load_over_5_min = Convert.ToDecimal(reader["Avg_Cpu_load_over_5_min"]);

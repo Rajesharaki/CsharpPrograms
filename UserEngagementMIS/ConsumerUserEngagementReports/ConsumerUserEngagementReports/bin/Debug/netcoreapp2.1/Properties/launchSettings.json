@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:50027",
-      "sslPort": 44358
+      "applicationUrl": "http://localhost:50638",
+      "sslPort": 44337
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "UserEngagementReport": {
+    "ConsumerUserEngagementReports": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

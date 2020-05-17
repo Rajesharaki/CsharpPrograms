@@ -13031,11 +13031,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj",
-      "projectName": "UserEngagementReport",
-      "projectPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\UserEngagementReport.csproj",
+      "projectUniqueName": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj",
+      "projectName": "ConsumerUserEngagementReports",
+      "projectPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports.csproj",
       "packagesPath": "C:\\Users\\rajes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\UserEngagementMISReport\\UserEngagementReport\\UserEngagementReport\\obj\\",
+      "outputPath": "C:\\Users\\rajes\\OneDrive\\Desktop\\VisualStudio\\CsharpPrograms\\UserEngagementMIS\\ConsumerUserEngagementReports\\ConsumerUserEngagementReports\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rajes\\AppData\\Roaming\\NuGet\\NuGet.Config",
