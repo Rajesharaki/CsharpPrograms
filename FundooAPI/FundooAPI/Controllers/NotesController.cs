@@ -40,10 +40,10 @@ namespace FundooAPI.Controllers
         /// <returns>IActionResult</returns>
         [HttpPost]
         [Route("AddNotes")]
-        public async Task<IActionResult> AddNotesAsync(IFormFile file,int Label_ID,string title,string description)
+        public async Task<IActionResult> AddNotesAsync(IFormFile file, int Label_ID, string title, string description)
         {
 
-            if (Label_ID>0&&title!=null&&description!=null)
+            if (Label_ID > 0 && title != null && description != null)
             {
                 NotesViewModel model = new NotesViewModel
                 {
@@ -53,10 +53,10 @@ namespace FundooAPI.Controllers
                     CreatedDate = DateTime.Now,
                     Modifieddate = DateTime.Now,
                     IsArchive = false,
-                    IsTrash=false,
-                    Pin=false,
-                    Reminder=false,
-                    LabelId=Label_ID
+                    IsTrash = false,
+                    Pin = false,
+                    Reminder = false,
+                    LabelId = Label_ID
                 };
                 var result = await _notes.AddNotesAsync(file, model);
                 if (result == true)
@@ -253,12 +253,12 @@ namespace FundooAPI.Controllers
             if (Note_Id > 0)
             {
                 string email = User.Identity.Name;
-                var model=_notes.GetNotesAndLabel(Note_Id,email);
+                var model = _notes.GetNotesAndLabel(Note_Id, email);
                 if (model.Any())
                 {
                     return Ok(new { NotesAndLabels = model });
                 }
-                return NotFound(new { Status="Not found any notes with Id ="+Note_Id});
+                return NotFound(new { Status = "Not found any notes with Id =" + Note_Id });
             }
             return BadRequest(new { Status = "Id is Mandatory and Id should be more than Zero" });
         }
@@ -274,14 +274,21 @@ namespace FundooAPI.Controllers
         {
             if (Title != null)
             {
-                var models=_notes.Search(Title);
-                if (models.Count()!=0)
+                var models = _notes.Search(Title);
+                if (models.Count() != 0)
                 {
-                    return Ok(new { Notes=models});
+                    return Ok(new { Notes = models });
                 }
-                return NotFound(new { Status="Not Found any notes with Title= "+Title});
+                return NotFound(new { Status = "Not Found any notes with Title= " + Title });
             }
-            return BadRequest(new {Status="Title is mandatory"});
+            return BadRequest(new { Status = "Title is mandatory" });
         }
+
+        //[HttpPost]
+        //[Route("Hello")]
+        //public IActionResult File(IFormFile file)
+        //{
+        //    return Ok();
+        //}
     }
 }

@@ -6,6 +6,7 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooAPI.runtimeconfig.dev.json
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooAPI.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooAPI.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooAPI.xml
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\BusinessManager.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\Common.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooRepository.dll
@@ -13,6 +14,7 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooRepository.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\Common.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.csprojAssemblyReference.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.csproj.CoreCompileInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.RazorAssemblyInfo.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.RazorAssemblyInfo.cs
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.AssemblyInfoInputs.cache
@@ -22,5 +24,3 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.genruntimeconfig.cache
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\bin\Debug\netcoreapp2.1\FundooAPI.xml
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\FundooAPI\FundooAPI\obj\Debug\netcoreapp2.1\FundooAPI.csproj.CoreCompileInputs.cache

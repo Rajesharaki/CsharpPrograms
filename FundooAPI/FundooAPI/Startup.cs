@@ -77,21 +77,11 @@ namespace FundooAPI
             services.AddTransient<ILabel, ILabelImplementation>();
             services.AddTransient<ILabelRepositary, ILabelRepositaryImplementation>();
 
-            ///Enable CORS
-            services.AddCors(options =>
-            {
-                options.AddPolicy("EnableCORS", builder =>
-                 {
-                     builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
-                 });
-            });
-
             ////Register the MVC
             services.AddMvc(config =>
             {
                 config.ReturnHttpNotAcceptable = true;
-                config.InputFormatters.Add(new XmlSerializerInputFormatter()); //It can take xml request also
-                config.OutputFormatters.Add(new XmlSerializerOutputFormatter()); //it can response in xml format also
+                
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //Register the SwaggerGen
@@ -102,12 +92,7 @@ namespace FundooAPI
                     Title = "Fundoo API",
                     Version = "V2"
                 });
-
-                //Provide api path
-                var xmlpath = AppDomain.CurrentDomain.BaseDirectory + @"FundooAPI.xml";
-
-                //Its includes comments in swagger UI
-                options.IncludeXmlComments(xmlpath);
+                
                 options.AddSecurityDefinition("oauth2", new ApiKeyScheme
                 {
                     Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
@@ -167,7 +152,6 @@ namespace FundooAPI
                 app.UseHsts();
             }
 
-            app.UseCors("EnableCORS");
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseMvc();
