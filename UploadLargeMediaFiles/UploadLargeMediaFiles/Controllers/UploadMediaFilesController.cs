@@ -22,6 +22,60 @@ namespace UploadLargeMediaFiles.Controllers
             _env = env;
         }
 
+        [HttpPost]
+        [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
+        [RequestSizeLimit(209715200)]
+        [Route("UploadFilesUsingMultiThread")]
+        public IActionResult UploadFilesUsingMultiThread(IFormFileCollection files)
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            try
+            {
+                if (files.Any())
+                {
+                    if (!Directory.Exists(_env.WebRootPath + "//UploadFilesUsingMultiThread//"))
+                    {
+                        Directory.CreateDirectory(_env.WebRootPath + "//UploadFilesUsingMultiThread//");
+                    }
+                    ThreadStart[] threadStart = new ThreadStart[10];
+                    Thread[] thread = new Thread[10];
+                    int loop = 0;
+                    FileStream filestream = null;
+                    foreach (var file in files)
+                    {
+                        loop++;
+                        filestream = System.IO.File.Create(_env.WebRootPath + "//UploadFilesUsingMultiThread//" + file.FileName);
+                        threadStart[loop] = new ThreadStart(() => this.CopyFiles(file, filestream));
+                        thread[loop] = new Thread(threadStart[loop]);
+                        thread[loop].Start();
+                        if (loop == 10)
+                        {
+                            loop = 0;
+                        }
+                        thread[loop].Join();
+                    }
+                    filestream.Flush();
+                    filestream.Close();
+                    timer.Stop();
+                    return Ok("Successfully Uploaded all files with :" + timer.ElapsedMilliseconds + " milliSeconds");
+                }
+                else
+                {
+                    return NotFound("Files are Empty");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        private void CopyFiles(IFormFile file, FileStream fileStream)
+        {
+            file.CopyTo(fileStream);
+        }
 
         [HttpPost]
         [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
@@ -62,56 +116,6 @@ namespace UploadLargeMediaFiles.Controllers
 
                 return BadRequest(ex.Message.ToString());
             }
-        }
-
-        [HttpPost]
-        [Route("UploadFilesUsingMultiThread")]
-        public IActionResult UploadFilesUsingMultiThread(IFormFileCollection files)
-        {
-            Stopwatch timer = new Stopwatch();
-            timer.Start();
-            try
-            {
-                if (files.Any())
-                {
-                    if (!Directory.Exists(_env.WebRootPath + "//UploadFilesUsingMultiThread//"))
-                    {
-                        Directory.CreateDirectory(_env.WebRootPath + "//UploadFilesUsingMultiThread//");
-                    }
-                    ThreadStart[] threadStart = new ThreadStart[10];
-                    Thread[] thread = new Thread[10];
-                    int loop = 0;
-                    foreach (var file in files)
-                    {
-                        loop++;
-                        FileStream filestream = System.IO.File.Create(_env.WebRootPath + "//UploadFilesUsingMultiThread//" + file.FileName);
-                        threadStart[loop] = new ThreadStart(() => this.CopyFiles(file, filestream));
-                        thread[loop] = new Thread(threadStart[loop]);
-                        thread[loop].Start();
-                        filestream.Flush();
-                        if (loop == 10)
-                        {
-                            loop = 0;
-                        }
-                    }
-                    timer.Stop();
-                    return Ok("Successfully Uploaded all files with :" + timer.ElapsedMilliseconds + " milliSeconds");
-                }
-                else
-                {
-                    return NotFound("Files are Empty");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message.ToString());
-            }
-        }
-
-        private void CopyFiles(IFormFile file, FileStream fileStream)
-        {
-            file.CopyTo(fileStream);
         }
     }
 }
