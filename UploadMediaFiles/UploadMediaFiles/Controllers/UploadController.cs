@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,65 +12,85 @@ namespace UploadMediaFiles.Controllers
 {
     public class UploadController : Controller
     {
+        private readonly static Object obj = new Object();
+        private readonly IHostingEnvironment _env;
+
+        public UploadController(IHostingEnvironment env)
+        {
+            _env = env;
+        }
         public IActionResult ChunkUpload()
         {
             return View();
         }
+        public void UploadFile(IFormFile file)
+        {
+            lock (obj)
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+                var FilePath = Path.Combine(path, file.FileName);
 
-        public IActionResult UploadFile(IFormFile file)
-        {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            var FilePath = Path.Combine(path, file.FileName);
-            if (System.IO.File.Exists(FilePath))
-                System.IO.File.Delete(FilePath);
-            using (var fileStream = new FileStream(FilePath, FileMode.Create, FileAccess.ReadWrite))
-            {
-                file.CopyTo(fileStream);
-                fileStream.Close();
-            }
-            Merge(file.FileName, path);
-            return Json("Successfully Uploaded the File");
-        }
-        private SortedList<int, string> GetSortedList(string[] files)
-        {
-            int FileNumber = 0;
-            SortedList<int, string> result = new SortedList<int, string>();
-            foreach (var FileName in files)
-            {
-                var token = ".part_";
-                var MyContent = FileName.Substring(FileName.LastIndexOf(token) + token.Length);///"1.5"
-                int.TryParse(MyContent.Substring(0, MyContent.IndexOf(".")), out FileNumber);
-                result.Add(FileNumber, FileName);
-            }
-            return result;
-        }
-        private void Merge(string FileName, string path)
-        {
-            var token = ".part_";
-            var ActualFileName = FileName.Substring(0, FileName.IndexOf(token));
-            var MyContent = FileName.Substring(FileName.LastIndexOf(token) + token.Length);///" 1.5"
-            int TotalFileCount = 0;
-            int.TryParse(MyContent.Substring(MyContent.IndexOf(".") + 1), out TotalFileCount);
-            var files = Directory.GetFiles(path, "*" + ActualFileName + "*");
-            var actualfilepath = Path.Combine(path, ActualFileName);
-            if (files.Length == TotalFileCount)
-            {
-                lock (this)
+                if (!System.IO.File.Exists(FilePath))
                 {
-                    FileStream fileChunk = null;
-                    var fileList = GetSortedList(files).ToList();
-                    FileStream ActualFileStream = new FileStream(actualfilepath, FileMode.Create);
-                    foreach (var chunk in fileList)
+                    using (var chunkFile = new FileStream(FilePath, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        fileChunk = new FileStream(chunk.Value, FileMode.Open);
-                        fileChunk.CopyTo(ActualFileStream);
+                        file.CopyTo(chunkFile);
                     }
-                    fileChunk.Close();
-                    fileChunk.Flush();
-                    ActualFileStream.Close();
-                    ActualFileStream.Flush();
+                    BindChunkFiles(file.FileName, path);
                 }
             }
+        }
+
+        private void BindChunkFiles(string FileName, string path)
+        {
+            //Total ChunkFiles
+
+            string[] splitFile = FileName.Split('.');
+            int totalPart;
+            int.TryParse(splitFile[splitFile.Length - 1], out totalPart);
+
+            //ActualFileName
+
+            var actualFileName = FileName.Substring(0, FileName.IndexOf(".part"));
+            var files = Directory.GetFiles(path, actualFileName + ".part_" + "*" + totalPart);
+
+            //Actual FilePath
+            var actualFilePath = Path.Combine(path, actualFileName);
+            //Merge all chunk files into the actual files
+
+            if (totalPart == files.Length)
+            {
+                SortedList<int, string> fileList = new SortedList<int, String>();
+                var SortedFiles = this.SortedFiles(files).ToList();
+                lock (obj)
+                {
+                    using (FileStream actualFile = new FileStream(actualFilePath, FileMode.Create))
+                    {
+                        foreach (var chunks in SortedFiles)
+                        {
+                            using (FileStream chunkFile = new FileStream(chunks.Value, FileMode.Open))
+                            {
+                                chunkFile.CopyTo(actualFile);
+                            }
+                            System.IO.File.Delete(chunks.Value);
+                        }
+                    } 
+                }
+            }
+        }
+
+        private SortedList<int, string> SortedFiles(string[] files)
+        {
+            SortedList<int, string> fileList = new SortedList<int, string>();
+            foreach (var FileName in files)
+            {
+                var part = ".part_";
+                var substr =FileName.Substring(FileName.LastIndexOf(part),(part.Length+1));
+                string []fileArray=substr.Split('_');
+                int fileNumber = Convert.ToInt32(fileArray[fileArray.Length - 1]);
+                fileList.Add(fileNumber, FileName);
+            }
+            return fileList;
         }
     }
 }
