@@ -1,0 +1,53 @@
+﻿<input type="file" id="uploadFile" name="file" />
+&nbsp;
+&nbsp;
+<a class="btn btn-primary" href="#" id="btnUpload">Upload file</a>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#btnUpload').click(function () {
+                UploadFile($('#uploadFile')[0].files);
+            }
+            )
+        });
+
+        function UploadFile(TargetFile) {
+            var FileChunk = [];
+            var file = TargetFile[0];
+            var MaxFileSizeMB = 1;
+            var BufferChunkSize = MaxFileSizeMB * (1024 * 1024);
+            var ReadBuffer_Size = 1024;
+            var FileStreamPos = 0;
+            var EndPos = BufferChunkSize;
+            var Size = file.size;
+
+            while (FileStreamPos < Size) {
+                FileChunk.push(file.slice(FileStreamPos, EndPos));
+                FileStreamPos = EndPos;
+                EndPos = FileStreamPos + BufferChunkSize;
+            }
+            var TotalParts = FileChunk.length;
+            var PartCount = 0;
+            while (chunk = FileChunk.shift()) {
+                PartCount++;
+                var FilePartName = file.name + ".part_" + PartCount + "." + TotalParts;
+                UploadFileChunk(chunk, FilePartName);
+            }
+        }
+
+        function UploadFileChunk(Chunk, FileName) {
+            var FD = new FormData();
+            FD.append('file', Chunk, FileName);
+            $.ajax({
+                type: "POST",
+                url: 'http://localhost:59220/Upload/UploadFile/',
+                contentType: false,
+                processData: false,
+                data: FD
+            });
+        }
+    </script>
+}
+
