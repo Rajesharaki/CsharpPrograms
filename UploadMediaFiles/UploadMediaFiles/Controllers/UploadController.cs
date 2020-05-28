@@ -23,7 +23,7 @@ namespace UploadMediaFiles.Controllers
         {
             return View();
         }
-        public void UploadFile(IFormFile file)
+        public IActionResult UploadFile(IFormFile file)
         {
             lock (obj)
             {
@@ -39,6 +39,7 @@ namespace UploadMediaFiles.Controllers
                     BindChunkFiles(file.FileName, path);
                 }
             }
+            return View();
         }
 
         private void BindChunkFiles(string FileName, string path)
@@ -74,7 +75,7 @@ namespace UploadMediaFiles.Controllers
                             }
                             System.IO.File.Delete(chunks.Value);
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -85,8 +86,8 @@ namespace UploadMediaFiles.Controllers
             foreach (var FileName in files)
             {
                 var part = ".part_";
-                var substr =FileName.Substring(FileName.LastIndexOf(part),(part.Length+1));
-                string []fileArray=substr.Split('_');
+                var substr = FileName.Substring(FileName.LastIndexOf(part), (part.Length + 1));
+                string[] fileArray = substr.Split('_');
                 int fileNumber = Convert.ToInt32(fileArray[fileArray.Length - 1]);
                 fileList.Add(fileNumber, FileName);
             }
