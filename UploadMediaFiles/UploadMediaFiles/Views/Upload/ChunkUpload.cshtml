@@ -1,7 +1,8 @@
-﻿<input type="file" id="uploadFile" name="file" />
-&nbsp;
-&nbsp;
-<a class="btn btn-primary" href="#" id="btnUpload">Upload file</a>
+﻿
+    <div>
+        <input type="file" id="uploadFile" name="file" />
+        <a class="btn btn-primary btn-success" id="btnUpload">Upload file</a>
+    </div>
 
 @section Scripts
 {
@@ -33,11 +34,11 @@
             while (chunk = FileChunk.shift()) {
                 PartCount++;
                 var FilePartName = file.name + ".part_" + PartCount + "." + TotalParts;
-                UploadFileChunk(chunk, FilePartName);
+                UploadFileChunk(chunk, FilePartName, PartCount, TotalParts, file.FileName);
             }
         }
 
-        function UploadFileChunk(Chunk, FileName) {
+        function UploadFileChunk(Chunk, FileName, fileCount, TotalFile) {
             var FD = new FormData();
             FD.append('file', Chunk, FileName);
             $.ajax({
@@ -45,7 +46,12 @@
                 url: 'http://localhost:59220/Upload/UploadFile/',
                 contentType: false,
                 processData: false,
-                data: FD, 
+                data: FD,
+                success: function (response) {
+                    if (fileCount == TotalFile) {
+                        alert("Successfully Uploaded ");
+                    }
+                }
             });
         }
     </script>

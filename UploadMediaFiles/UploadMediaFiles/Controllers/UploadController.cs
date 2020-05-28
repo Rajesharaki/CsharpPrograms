@@ -13,17 +13,11 @@ namespace UploadMediaFiles.Controllers
     public class UploadController : Controller
     {
         private readonly static Object obj = new Object();
-        private readonly IHostingEnvironment _env;
-
-        public UploadController(IHostingEnvironment env)
-        {
-            _env = env;
-        }
         public IActionResult ChunkUpload()
         {
             return View();
         }
-        public IActionResult UploadFile(IFormFile file)
+        public JsonResult UploadFile(IFormFile file)
         {
             lock (obj)
             {
@@ -39,7 +33,7 @@ namespace UploadMediaFiles.Controllers
                     BindChunkFiles(file.FileName, path);
                 }
             }
-            return View();
+            return Json("Success");
         }
 
         private void BindChunkFiles(string FileName, string path)
@@ -57,11 +51,12 @@ namespace UploadMediaFiles.Controllers
 
             //Actual FilePath
             var actualFilePath = Path.Combine(path, actualFileName);
+
             //Merge all chunk files into the actual files
 
             if (totalPart == files.Length)
             {
-                SortedList<int, string> fileList = new SortedList<int, String>();
+                SortedList<double, string> fileList = new SortedList<double, String>();
                 var SortedFiles = this.SortedFiles(files).ToList();
                 lock (obj)
                 {
@@ -80,15 +75,16 @@ namespace UploadMediaFiles.Controllers
             }
         }
 
-        private SortedList<int, string> SortedFiles(string[] files)
+        private SortedList<double, string> SortedFiles(string[] files)
         {
-            SortedList<int, string> fileList = new SortedList<int, string>();
+            SortedList<double, string> fileList = new SortedList<double, string>();
             foreach (var FileName in files)
             {
                 var part = ".part_";
-                var substr = FileName.Substring(FileName.LastIndexOf(part), (part.Length + 1));
-                string[] fileArray = substr.Split('_');
-                int fileNumber = Convert.ToInt32(fileArray[fileArray.Length - 1]);
+                var substr = FileName.Substring(FileName.IndexOf(part));
+                string [] splitPart=substr.Split('_');
+                double fileNumber = 0;
+                double.TryParse(splitPart[splitPart.Length-1], out fileNumber);
                 fileList.Add(fileNumber, FileName);
             }
             return fileList;
