@@ -17,6 +17,8 @@ namespace UploadMediaFiles.Controllers
         private readonly static Object obj = new Object();
 
         [HttpPost]
+        [RequestFormLimits(MultipartBodyLengthLimit = 1024 * 1024 * 200)]
+        [RequestSizeLimit(1024 * 1024 * 200)]
         [Route("UploadFile")]
         public IActionResult UploadFile(IFormFile file)
         {
@@ -69,7 +71,7 @@ namespace UploadMediaFiles.Controllers
                             {
                                 chunkFile.CopyTo(actualFile);
                             }
-                            System.IO.File.Delete(chunks.Value);
+                           // System.IO.File.Delete(chunks.Value);
                         }
                     }
                 }
