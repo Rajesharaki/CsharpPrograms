@@ -34,7 +34,7 @@
             while (chunk = FileChunk.shift()) {
                 PartCount++;
                 var FilePartName = file.name + ".part_" + PartCount + "." + TotalParts;
-                UploadFileChunk(chunk, FilePartName, PartCount, TotalParts, file.FileName);
+                UploadFileChunk(chunk, FilePartName, PartCount, TotalParts);
             }
         }
 
@@ -43,14 +43,17 @@
             FD.append('file', Chunk, FileName);
             $.ajax({
                 type: "POST",
-                url: 'http://localhost:59220/api/Upload/UploadFile',
+                url: 'http://localhost:59220/api/UploadMediaFiles/Upload',
                 contentType: false,
                 processData: false,
                 data: FD,
                 success: function (response) {
                     if (fileCount == TotalFile) {
-                        alert("Successfully Uploaded ");
+                        alert("Sucessfully Uploaded");
                     }
+                },
+                failure: function (error) {
+                    alert(error);
                 }
             });
         }
