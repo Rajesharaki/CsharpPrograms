@@ -1,3 +1,4 @@
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\web.config
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
@@ -8,7 +9,6 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\Upl
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\UploadMediaFiles.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\UploadMediaFiles.Views.dll
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\UploadMediaFiles.Views.pdb
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.csprojAssemblyReference.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.csproj.CoreCompileInputs.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.RazorAssemblyInfo.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.RazorAssemblyInfo.cs
@@ -31,4 +31,4 @@ C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\Upl
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.pdb
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.genruntimeconfig.cache
 C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.csproj.CopyComplete
-C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\bin\Debug\netcoreapp2.1\web.config
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\UploadMediaFiles\UploadMediaFiles\obj\Debug\netcoreapp2.1\UploadMediaFiles.csprojAssemblyReference.cache

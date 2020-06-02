@@ -14,6 +14,7 @@ namespace UploadMediaFiles.Controllers
     public class UploadMediaFilesController : ControllerBase
     {
         private readonly IHostingEnvironment _env;
+        private readonly static Object _locker = new Object();
         public UploadMediaFilesController(IHostingEnvironment env)
         {
             _env = env;
@@ -24,7 +25,8 @@ namespace UploadMediaFiles.Controllers
         [RequestSizeLimit(1024 * 1024 * 200)]
         public IActionResult Upload()
         {
-            foreach (var file in Request.Form.Files)
+            var files = Request.Form.Files;
+            foreach (var file in files)
             {
                 if (file != null && file.Length > 0)
                 {
@@ -41,11 +43,14 @@ namespace UploadMediaFiles.Controllers
                         if (System.IO.File.Exists(path))
                             System.IO.File.Delete(path);
 
-                        using (FileStream chunkFiles = System.IO.File.Create(path))
+                        lock (_locker)
                         {
-                            file.CopyTo(chunkFiles);
+                            using (FileStream chunkFiles = System.IO.File.Create(path))
+                            {
+                                file.CopyTo(chunkFiles);
+                            }
+                            MergeFile(path);
                         }
-                        MergeFile(path);
                     }
                     catch (Exception ex)
                     {
@@ -53,13 +58,12 @@ namespace UploadMediaFiles.Controllers
                     }
                 }
             }
-            return Ok("SuccessFully Uploaded");
+            return Ok("Successfully Uploaded");
         }
 
-        private readonly static Object _locker = new Object();
         public bool MergeFile(string FileName)
         {
-            bool rslt = false;
+            bool result = false;
             string partToken = ".part_";
 
             //actual FileName
@@ -76,34 +80,33 @@ namespace UploadMediaFiles.Controllers
             string[] FilesList = Directory.GetFiles(Path.GetDirectoryName(FileName), Searchpattern);
             if (FilesList.Count() == totalPart)
             {
+
                 SortedList<double, string> fileList = new SortedList<double, String>();
                 var SortedFiles = this.SortedFiles(FilesList).ToList();
 
                 var MergeOrder = SortedFiles.OrderBy(s => s.Key).ToList();
-                using (FileStream FS = new FileStream(baseFileName, FileMode.Create))
+                foreach (var chunk in MergeOrder)
                 {
-                    foreach (var chunk in MergeOrder)
+                    try
                     {
-                        try
+                        using (FileStream actualFileStream = new FileStream(baseFileName, FileMode.Create))
                         {
-                            lock (_locker)
+
+                            using (FileStream chunkFile = new FileStream(chunk.Value, FileMode.Open))
                             {
-                                using (FileStream chunkFile = new FileStream(chunk.Value, FileMode.Open))
-                                {
-                                    chunkFile.CopyTo(FS);
-                                }
-                                System.IO.File.Delete(chunk.Value);
+                                chunkFile.CopyTo(actualFileStream);
                             }
-                        }
-                        catch (IOException ex)
-                        {
-                            throw new Exception(ex.Message.ToString());
+                            System.IO.File.Delete(chunk.Value);
                         }
                     }
+                    catch (IOException ex)
+                    {
+                        throw new Exception(ex.Message.ToString());
+                    }
+                    result = true;
                 }
-                rslt = true;
             }
-            return rslt;
+            return result;
         }
         private SortedList<double, string> SortedFiles(string[] files)
         {
