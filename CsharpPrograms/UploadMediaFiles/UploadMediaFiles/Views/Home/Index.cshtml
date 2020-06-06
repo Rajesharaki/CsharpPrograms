@@ -1,7 +1,9 @@
 ﻿
 <div>
     <input type="file" id="uploadFile" name="file" />
-    <a class="btn btn-primary btn-success" id="btnUpload">Upload file</a>
+    <input type="button" value="UploadFiles" id="btnUpload"
+           onmouseover="this.style.background='green';this.style.color='white'"
+           onmouseout="this.style.background = 'black'; this.style.color='white'"/>
 </div>
 
 @section Scripts
@@ -14,10 +16,16 @@
             )
         });
 
+        window.onerror = function (msg, url, line)
+        {
+            alert("Message: " + msg + "\nURL: " + url + "\nLine: " + line);
+            return true;
+        }
+
         function UploadFile(TargetFile) {
             var FileChunk = [];
             var file = TargetFile[0];
-            var MaxFileSizeMB = 100;
+            var MaxFileSizeMB = 20;
             var BufferChunkSize = MaxFileSizeMB * (1024 * 1024);
             var ReadBuffer_Size = 1024;
             var FileStreamPos = 0;
