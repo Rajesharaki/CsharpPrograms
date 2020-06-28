@@ -1,0 +1,4 @@
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookRepositary\obj\Debug\netcoreapp2.1\BookRepositary.csprojAssemblyReference.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookRepositary\obj\Debug\netcoreapp2.1\BookRepositary.csproj.CoreCompileInputs.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookRepositary\obj\Debug\netcoreapp2.1\BookRepositary.AssemblyInfoInputs.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookRepositary\obj\Debug\netcoreapp2.1\BookRepositary.AssemblyInfo.cs

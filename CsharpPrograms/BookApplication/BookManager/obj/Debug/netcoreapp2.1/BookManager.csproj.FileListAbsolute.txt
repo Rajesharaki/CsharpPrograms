@@ -1,0 +1,12 @@
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\bin\Debug\netcoreapp2.1\BookManager.deps.json
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\bin\Debug\netcoreapp2.1\BookManager.dll
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\bin\Debug\netcoreapp2.1\BookManager.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\bin\Debug\netcoreapp2.1\Comman.dll
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\bin\Debug\netcoreapp2.1\Comman.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.csprojAssemblyReference.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.csproj.CoreCompileInputs.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.AssemblyInfoInputs.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.AssemblyInfo.cs
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.csproj.CopyComplete
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.dll
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\BookManager\obj\Debug\netcoreapp2.1\BookManager.pdb

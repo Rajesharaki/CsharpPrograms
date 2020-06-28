@@ -1,0 +1,9 @@
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\bin\Debug\netcoreapp3.1\Comman.deps.json
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\bin\Debug\netcoreapp3.1\Comman.dll
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\bin\Debug\netcoreapp3.1\Comman.pdb
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\obj\Debug\netcoreapp3.1\Comman.csprojAssemblyReference.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\obj\Debug\netcoreapp3.1\Comman.csproj.CoreCompileInputs.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\obj\Debug\netcoreapp3.1\Comman.AssemblyInfoInputs.cache
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\obj\Debug\netcoreapp3.1\Comman.AssemblyInfo.cs
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\obj\Debug\netcoreapp3.1\Comman.dll
+C:\Users\rajes\OneDrive\Desktop\VisualStudio\CsharpPrograms\BookApplication\Comman\obj\Debug\netcoreapp3.1\Comman.pdb
