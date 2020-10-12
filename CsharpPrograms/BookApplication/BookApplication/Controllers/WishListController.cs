@@ -15,14 +15,12 @@ namespace BookApplication.Controllers
     public class WishListController : ControllerBase
     {
         private readonly IWishList _wishList;
-
         public WishListController(IWishList wishList)
         {
             _wishList = wishList;
         }
 
         [HttpPost]
-        [Route("AddWishList")]
         public async Task<IActionResult> AddWishList(Guid BookId)
         {
             string email = User.Identity.Name;
@@ -36,9 +34,7 @@ namespace BookApplication.Controllers
             return BadRequest();
         }
 
-
-        [HttpPost]
-        [Route("GetWishLists")]
+        [HttpGet]
         public IActionResult GetWishLists()
         {
             string Message = null;
@@ -60,7 +56,7 @@ namespace BookApplication.Controllers
             return BadRequest(Message);
         }
 
-        [HttpGet, Route("UpdateSummary")]
+        [HttpPost, Route("UpdateSummary")]
         public async Task<IActionResult> OrdrerSummary(Guid BookID, Guid AddressID)
         {
             try

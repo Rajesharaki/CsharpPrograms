@@ -15,14 +15,12 @@ namespace BookApplication.Controllers
     public class CartController : ControllerBase
     {
         private readonly ICart _cart;
-
         public CartController(ICart cart)
         {
             _cart = cart;
         }
 
         [HttpPost]
-        [Route("AddCart")]
         public async Task<IActionResult> AddCart(Guid BookId) 
         {
             string email = User.Identity.Name;
@@ -36,8 +34,7 @@ namespace BookApplication.Controllers
             return BadRequest();
         }
 
-        [HttpPost]
-        [Route("GetCartBooks")]
+        [HttpGet]
         public IActionResult GetCartBooks() 
         {
             string Message = null;

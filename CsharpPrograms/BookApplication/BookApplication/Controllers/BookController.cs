@@ -16,12 +16,10 @@ namespace BookApplication.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-
     public class BookController : ControllerBase
     {
         private readonly IBook _book;
         private readonly IHostingEnvironment _env;
-
         public BookController(IBook book, IHostingEnvironment env)
         {
             _book = book;
@@ -29,35 +27,28 @@ namespace BookApplication.Controllers
         }
 
         [HttpPost]
-        [Route("AddBooks")]
         public async Task<IActionResult> AddBooks([FromForm]BookViewModel model)
         {
             string Message = null;
-
             try
             {
                 if (ModelState.IsValid && model != null)
                 {
-                    var extension=Path.GetExtension(model.CoverPhoto.FileName);
-
-                    if (extension.ToLower()==".jpg"|| extension.ToLower() == ".png"
-                        || extension.ToLower() == ".gif"|| extension.ToLower() == ".bng")
+                    var extension = Path.GetExtension(model.CoverPhoto.FileName);
+                    if (extension.ToLower() == ".jpg" || extension.ToLower() == ".png"
+                        || extension.ToLower() == ".gif" || extension.ToLower() == ".bng")
                     {
                         if (!Directory.Exists(_env.WebRootPath + "//BooksCoverPhotos//"))
                         {
                             Directory.CreateDirectory(_env.WebRootPath + "//BooksCoverPhotos//");
-
                         }
                         var directory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "BooksCoverPhotos");
                         string fileName = Guid.NewGuid().ToString() + "-" + model.CoverPhoto.FileName;
-
                         var path = Path.Combine(directory, fileName);
-
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             await model.CoverPhoto.CopyToAsync(stream);
                         }
-
                         Book book = new Book
                         {
                             Author = model.Author,
@@ -68,24 +59,20 @@ namespace BookApplication.Controllers
                             Stock = model.Stock,
                             CoverPhoto = fileName
                         };
-
                         var result = await _book.AddBooksAsync(book);
-
                         if (result > 0)
                             return Ok("Successfully added............");
-                    } 
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Message =ex.Message.ToString();
+                Message = ex.Message.ToString();
             }
-
             return BadRequest(Message);
         }
 
-        [HttpPost]
-        [Route("GetAllBooks")]
+        [HttpGet]
         public IActionResult GetAllBook()
         {
             try
